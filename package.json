@@ -1,0 +1,8 @@
+{
+  "homepage": "https://kneeprayer.github.io/webwallpaper",
+  "predeploy": "yarn run build",
+  "deploy": "gh-pages -b master -d build",
+  "dependencies": {
+    "gh-pages": "^2.0.1"
+  }
+}
