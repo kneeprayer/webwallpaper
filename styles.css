@@ -108,6 +108,8 @@ ul {
 
 .location:hover {
   opacity: 1;
+}.clock {
+  font-size: 8em;
 }.weather {
   position: absolute;
   font-style: italic;
@@ -164,8 +166,6 @@ ul {
 
 .center .name {
   margin-bottom: 30px;
-}.clock {
-  font-size: 8em;
 }.list {
   margin-bottom: 20px;
 }
