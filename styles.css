@@ -95,6 +95,12 @@ ul {
 
 ul {
   margin-top: 50px;
+}.clock__number {
+  font-size: 8em;
+}
+
+.clock__hangul {
+  font-size: 4em;
 }.location {
   opacity: 0.7;
   -webkit-transition: opacity 0.3s ease-in;
@@ -108,12 +114,6 @@ ul {
 
 .location:hover {
   opacity: 1;
-}.clock__number {
-  font-size: 8em;
-}
-
-.clock__hangul {
-  font-size: 4em;
 }.weather {
   position: absolute;
   font-style: italic;
