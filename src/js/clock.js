@@ -1,11 +1,9 @@
 const clock = document.querySelector(".js-clock .clock__text");
+var viewClockMode = "Hangul";
 
 function getTimeHangul(hours, minutes, seconds) {
   const now = new Date();
   let time;
-  // const hours = now.getHours();
-  // const minutes = now.getMinutes();
-  // const seconds = now.getSeconds();
   switch (parseInt(now.getHours() / 12)) {
     case 0:
       time = "오전 ";
@@ -171,7 +169,7 @@ function getTimeHangul(hours, minutes, seconds) {
   return;
 }
 
-function getTime() {
+function getTimeNumber() {
   const now = new Date();
   const hours = now.getHours();
   const minutes = now.getMinutes();
@@ -185,10 +183,26 @@ function getTime() {
   return;
 }
 
+function getTime() {
+  if (viewClockMode == "Number") {
+    getTimeNumber();
+  } else {
+    getTimeHangul();
+  }
+}
+
 function init() {
-  getTimeHangul();
-  setInterval(getTimeHangul, 1000);
+  getTime();
+  setInterval(getTime, 1000);
   return;
 }
+
+clock.addEventListener("click", () => {
+  if (viewClockMode == "Number") {
+    viewClockMode = "Hangul";
+  } else {
+    viewClockMode = "Number";
+  }
+});
 
 init();
