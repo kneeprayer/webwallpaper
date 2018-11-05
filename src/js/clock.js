@@ -197,12 +197,14 @@ function init() {
   return;
 }
 
-clock.addEventListener("click", () => {
+clock.addEventListener("click", function() {
   if (viewClockMode == "Number") {
     viewClockMode = "Hangul";
   } else {
     viewClockMode = "Number";
   }
+  this.classList.toggle("clock__hangul");
+  getTime();
 });
 
 init();
