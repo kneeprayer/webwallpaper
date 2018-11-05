@@ -1,7 +1,7 @@
 document.getElementById("app").innerHTML = `
     <section class="center">
         <div class="js-clock clock">
-            <h3 class="clock__text">00:00:00</h3>
+            <h3 class="clock__text clock__hangul">00:00:00</h3>
         </div>
         <div class="js-name name"></div>
         <div>

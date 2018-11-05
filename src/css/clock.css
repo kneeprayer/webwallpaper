@@ -1,3 +1,7 @@
-.clock {
+.clock__number {
   font-size: 8em;
+}
+
+.clock__hangul {
+  font-size: 4em;
 }
