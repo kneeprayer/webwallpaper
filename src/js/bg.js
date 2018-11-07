@@ -37,7 +37,7 @@ function saveBackground(imageUrl, city, country, name) {
     localStorage.removeItem("bg");
   }
   const expirationDate = new Date();
-  expirationDate.setDate(expirationDate.getDate() + 1);
+  expirationDate.setDate(expirationDate.getHours() + 1);
   const imageObject = {
     url: imageUrl,
     expiresOn: expirationDate,

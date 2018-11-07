@@ -6,165 +6,161 @@ function getTimeHangul(hours, minutes, seconds) {
   let time;
   switch (parseInt(now.getHours() / 12)) {
     case 0:
-      time = "오전 ";
+      time = " 오 전";
       break;
     case 1:
-      time = "오후 ";
+      time = " 오 후";
   }
 
   switch (now.getHours() % 12) {
     case 0:
-      time += "영";
+      time += " 영";
       break;
     case 1:
-      time += "한";
+      time += " 한";
       break;
     case 2:
-      time += "두";
+      time += " 두";
       break;
     case 3:
-      time += "세";
+      time += " 세";
       break;
     case 4:
-      time += "네";
+      time += " 네";
       break;
     case 5:
-      time += "다섯";
+      time += " 다 섯";
       break;
     case 6:
-      time += "여섯";
+      time += " 여 섯";
       break;
     case 7:
-      time += "일곱";
+      time += " 일 곱";
       break;
     case 8:
-      time += "여덟";
+      time += " 여 덟";
       break;
     case 9:
-      time += "아홉";
+      time += " 아 홉";
       break;
     case 10:
-      time += "열";
+      time += " 열";
       break;
     case 11:
-      time += "열한";
+      time += " 열 한";
       break;
     case 12:
-      time += "열두";
+      time += " 열 두";
       break;
   }
 
-  time += "시 ";
+  time += " 시<br>";
 
   switch (parseInt(now.getMinutes() / 10)) {
     case 1:
-      time += "십";
+      time += " 십";
       break;
     case 2:
-      time += "이십";
+      time += " 이 십";
       break;
     case 3:
-      time += "삼십";
+      time += " 삼 십";
       break;
     case 4:
-      time += "사십";
+      time += " 사 십";
       break;
     case 5:
-      time += "오십";
+      time += " 오 십";
       break;
     case 6:
-      time += "육십";
+      time += " 육 십";
   }
 
   switch (now.getMinutes() % 10) {
     case 1:
-      time += "일";
+      time += " 일";
       break;
     case 2:
-      time += "이";
+      time += " 이";
       break;
     case 3:
-      time += "삼";
+      time += " 삼";
       break;
     case 4:
-      time += "사";
+      time += " 사";
       break;
     case 5:
-      time += "오";
+      time += " 오";
       break;
     case 6:
-      time += "육";
+      time += " 육";
       break;
     case 7:
-      time += "칠";
+      time += " 칠";
       break;
     case 8:
-      time += "팔";
+      time += " 팔";
       break;
     case 9:
-      time += "구";
+      time += " 구";
   }
 
-  if (now.getMinutes() == 0) {
-    time += "영";
+  if (now.getMinutes() != 0) {
+    time += " 분<br>";
   }
-
-  time += "분 ";
 
   switch (parseInt(now.getSeconds() / 10)) {
     case 1:
-      time += "십";
+      time += " 십";
       break;
     case 2:
-      time += "이십";
+      time += " 이 십";
       break;
     case 3:
-      time += "삼십";
+      time += " 삼 십";
       break;
     case 4:
-      time += "사십";
+      time += " 사 십";
       break;
     case 5:
-      time += "오십";
+      time += " 오 십";
       break;
     case 6:
-      time += "육십";
+      time += " 육 십";
   }
 
   switch (now.getSeconds() % 10) {
     case 1:
-      time += "일";
+      time += " 일";
       break;
     case 2:
-      time += "이";
+      time += " 이";
       break;
     case 3:
-      time += "삼";
+      time += " 삼";
       break;
     case 4:
-      time += "사";
+      time += " 사";
       break;
     case 5:
-      time += "오";
+      time += " 오";
       break;
     case 6:
-      time += "육";
+      time += " 육";
       break;
     case 7:
-      time += "칠";
+      time += " 칠";
       break;
     case 8:
-      time += "팔";
+      time += " 팔";
       break;
     case 9:
-      time += "구";
-  }
-  if (now.getSeconds() == 0) {
-    time += "영";
+      time += " 구";
   }
 
-  time += "초";
-
+  if (now.getSeconds() != 0) {
+    time += " 초";
+  }
   clock.innerHTML = time;
   return;
 }

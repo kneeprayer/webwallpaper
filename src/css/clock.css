@@ -1,7 +1,15 @@
+.clock {
+  text-align: justify;
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+  opacity: 1;
+}
+
 .clock__text {
-  font-size: 8em;
+  font-size: 3em;
 }
 
 .clock__hangul {
-  font-size: 4em;
+  font-size: 2em;
 }

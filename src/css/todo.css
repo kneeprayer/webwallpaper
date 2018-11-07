@@ -1,12 +1,18 @@
-.list {
+.center {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.center .list {
   margin-bottom: 20px;
 }
 
-.toDo {
+.center .toDo {
   font-size: 22px;
 }
 
-.toDo__button {
+.center .toDo__button {
   margin-right: 10px;
   cursor: pointer;
 }
