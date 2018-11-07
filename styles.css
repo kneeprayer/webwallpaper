@@ -1,17 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans);.location {
-  opacity: 0.7;
-  -webkit-transition: opacity 0.3s ease-in;
-  transition: opacity 0.3s ease-in;
-  font-style: italic;
-  font-size: 12px;
-  position: absolute;
-  bottom: 25px;
-  left: 25px;
-}
-
-.location:hover {
-  opacity: 1;
-}body,
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);body,
 html {
   overflow: hidden;
   height: 100%;
@@ -108,6 +95,19 @@ ul {
 
 ul {
   margin-top: 50px;
+}.location {
+  opacity: 0.7;
+  -webkit-transition: opacity 0.3s ease-in;
+  transition: opacity 0.3s ease-in;
+  font-style: italic;
+  font-size: 12px;
+  position: absolute;
+  bottom: 25px;
+  left: 25px;
+}
+
+.location:hover {
+  opacity: 1;
 }.clock__text {
   font-size: 92px;
 }
