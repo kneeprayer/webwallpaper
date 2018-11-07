@@ -1,17 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans);.location {
-  opacity: 0.7;
-  -webkit-transition: opacity 0.3s ease-in;
-  transition: opacity 0.3s ease-in;
-  font-style: italic;
-  font-size: 12px;
-  position: absolute;
-  bottom: 25px;
-  left: 25px;
-}
-
-.location:hover {
-  opacity: 1;
-}body,
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);body,
 html {
   overflow: hidden;
   height: 100%;
@@ -108,12 +95,25 @@ ul {
 
 ul {
   margin-top: 50px;
+}.location {
+  opacity: 0.7;
+  -webkit-transition: opacity 0.3s ease-in;
+  transition: opacity 0.3s ease-in;
+  font-style: italic;
+  font-size: 12px;
+  position: absolute;
+  bottom: 25px;
+  left: 25px;
+}
+
+.location:hover {
+  opacity: 1;
 }.clock__text {
-  font-size: 50px;
+  font-size: 92px;
 }
 
 .clock__hangul {
-  font-size: 30px;
+  font-size: 50px;
 }.weather {
   position: absolute;
   font-style: italic;
@@ -121,17 +121,6 @@ ul {
   position: absolute;
   top: 25px;
   right: 25px;
-}.list {
-  margin-bottom: 20px;
-}
-
-.toDo {
-  font-size: 22px;
-}
-
-.toDo__button {
-  margin-right: 10px;
-  cursor: pointer;
 }.center {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -181,4 +170,15 @@ ul {
 
 .center .name {
   margin-bottom: 30px;
+}.list {
+  margin-bottom: 20px;
+}
+
+.toDo {
+  font-size: 22px;
+}
+
+.toDo__button {
+  margin-right: 10px;
+  cursor: pointer;
 }
