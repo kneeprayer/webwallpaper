@@ -1,4 +1,17 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans);body,
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);.location {
+  opacity: 0.7;
+  -webkit-transition: opacity 0.3s ease-in;
+  transition: opacity 0.3s ease-in;
+  font-style: italic;
+  font-size: 12px;
+  position: absolute;
+  bottom: 25px;
+  left: 25px;
+}
+
+.location:hover {
+  opacity: 1;
+}body,
 html {
   overflow: hidden;
   height: 100%;
@@ -95,19 +108,56 @@ ul {
 
 ul {
   margin-top: 50px;
-}.location {
-  opacity: 0.7;
-  -webkit-transition: opacity 0.3s ease-in;
-  transition: opacity 0.3s ease-in;
+}.weather {
+  position: absolute;
   font-style: italic;
   font-size: 12px;
   position: absolute;
-  bottom: 25px;
+  top: 25px;
+  right: 25px;
+}.welcome {
+  position: absolute;
+  font-size: 1em;
+  top: 25px;
   left: 25px;
 }
 
-.location:hover {
-  opacity: 1;
+.welcome .name__input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1em;
+  border-bottom: 3px solid rgba(255, 255, 255, .8);
+  margin-bottom: 20px;
+}
+.welcome .name__input::-webkit-input-placeholder {
+  color: white;
+  opacity: 0.7;
+}
+.welcome .name__input::-ms-input-placeholder {
+  color: white;
+  opacity: 0.7;
+}
+.welcome .name__input::placeholder {
+  color: white;
+  opacity: 0.7;
+}
+
+.welcome .name__input:focus,
+.welcome .name__input:active {
+  outline: none;
+}
+
+.welcome .name__text {
+  font-size: 1em;
+  margin-bottom: 20px;
+}
+
+.welcome .name {
+  margin-bottom: 30px;
 }.clock {
   text-align: justify;
   position: absolute;
@@ -117,18 +167,11 @@ ul {
 }
 
 .clock__text {
-  font-size: 92px;
+  font-size: 3em;
 }
 
 .clock__hangul {
-  font-size: 50px;
-}.weather {
-  position: absolute;
-  font-style: italic;
-  font-size: 12px;
-  position: absolute;
-  top: 25px;
-  right: 25px;
+  font-size: 2em;
 }.center {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -142,51 +185,15 @@ ul {
           flex-direction: column;
 }
 
-.center .name__input {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  background: none;
-  border: none;
-  color: white;
-  font-size: 36px;
-  border-bottom: 3px solid rgba(255, 255, 255, .8);
-  margin-bottom: 20px;
-}
-.center .name__input::-webkit-input-placeholder {
-  color: white;
-  opacity: 0.7;
-}
-.center .name__input::-ms-input-placeholder {
-  color: white;
-  opacity: 0.7;
-}
-.center .name__input::placeholder {
-  color: white;
-  opacity: 0.7;
-}
-
-.center .name__input:focus,
-.center .name__input:active {
-  outline: none;
-}
-
-.center .name__text {
-  font-size: 36px;
+.center .list {
   margin-bottom: 20px;
 }
 
-.center .name {
-  margin-bottom: 30px;
-}.list {
-  margin-bottom: 20px;
-}
-
-.toDo {
+.center .toDo {
   font-size: 22px;
 }
 
-.toDo__button {
+.center .toDo__button {
   margin-right: 10px;
   cursor: pointer;
 }
