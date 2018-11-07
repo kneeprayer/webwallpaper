@@ -109,11 +109,11 @@ ul {
 ul {
   margin-top: 50px;
 }.clock__text {
-  font-size: 8em;
+  font-size: 50px;
 }
 
 .clock__hangul {
-  font-size: 4em;
+  font-size: 30px;
 }.weather {
   position: absolute;
   font-style: italic;
