@@ -114,13 +114,6 @@ ul {
 
 .clock__hangul {
   font-size: 50px;
-}.weather {
-  position: absolute;
-  font-style: italic;
-  font-size: 12px;
-  position: absolute;
-  top: 25px;
-  right: 25px;
 }.center {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -170,6 +163,13 @@ ul {
 
 .center .name {
   margin-bottom: 30px;
+}.weather {
+  position: absolute;
+  font-style: italic;
+  font-size: 12px;
+  position: absolute;
+  top: 25px;
+  right: 25px;
 }.list {
   margin-bottom: 20px;
 }
