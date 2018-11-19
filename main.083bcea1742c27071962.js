@@ -12804,7 +12804,7 @@ function saveBackground(imageUrl, city, country, name) {
     //   console.log(parsedImage);
     // } else {
     console.log('savedImage is null');
-    myImages = [];
+    myImageArray = [];
   } else {
     console.log('savedImage is not null');
     parsedImage = JSON.parse(savedImage);
