@@ -12897,6 +12897,7 @@ const locationContainer = document.querySelector(".js-location span"); // eslint
 
 let dragStartX = null;
 let bg_unsplash = null;
+var myImageArray = [];
 
 function sleep(waitMsec) {
   var startMsec = new Date();
