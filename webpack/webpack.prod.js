@@ -125,6 +125,28 @@ module.exports = {
     })
   ],
   optimization: {
+    runtimeChunk: true,
+    splitChunks: {
+      chunks: "all",
+      minSize: 30000,
+      maxSize: 240000,
+      minChunks: 1,
+      maxAsyncRequests: 5,
+      maxInitialRequests: 3,
+      automaticNameDelimiter: "~",
+      name: true,
+      cacheGroups: {
+        vendors: {
+          test: /[\\/]node_modules[\\/]/,
+          priority: -10
+        },
+        default: {
+          minChunks: 2,
+          priority: -20,
+          reuseExistingChunk: true
+        }
+      }
+    },
     minimizer: [
       new OptimizeCssAssetsPlugin({}),
       new UglifyJsPlugin({
@@ -149,7 +171,7 @@ module.exports = {
   },
   output: {
     path: PATHS.build,
-    filename: "[name].[hash].js",
-    chunkFilename: "[name].[hash].js"
+    filename: "[name].[chunkhash].js",
+    chunkFilename: "[name].[chunkhash].js"
   }
 };
