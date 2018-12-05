@@ -1,5 +1,7 @@
 const path = require("path");
 const webpack = require("webpack");
+const postcssPresetEnv = require("postcss-preset-env");
+const DEV_SERVER_PORT = 9000;
 
 module.exports = {
   mode: "development",
@@ -18,12 +20,17 @@ module.exports = {
             }
           },
           {
-            loader: "postcss-loader"
+            loader: "postcss-loader",
+            options: {
+              ident: "postcss",
+              plugins: () => [postcssPresetEnv({ stage: 0 })]
+            }
           }
         ]
       }
     ]
   },
+  devtool: "eval-source-map",
   devServer: {
     // https://webpack.js.org/configuration/dev-server/
     contentBase: path.join(__dirname, "../src"),
@@ -31,12 +38,15 @@ module.exports = {
     progress: true,
     inline: true,
     host: "localhost",
-    port: 8080,
+    port: DEV_SERVER_PORT,
     hot: true,
-    open: true,
-    proxy: {
-      "/": "/html/"
-    }
+    open: true
   },
-  plugins: [new webpack.HotModuleReplacementPlugin()]
+  resolve: {
+    extensions: [".js", ".json", ".png"]
+  },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoEmitOnErrorsPlugin()
+  ]
 };

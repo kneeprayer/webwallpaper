@@ -62,3 +62,14 @@ typings/
 
 # build + deploy directories
 dist/
+
+.DS_Store
+/build
+*.lock
+
+# Editor directories and files
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln

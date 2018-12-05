@@ -19,6 +19,7 @@ function handleSubmit(event) {
 
 function paintInput() {
   const input = document.createElement("input");
+  input.setAttribute("aria-label", "name");
   input.placeholder = "이름을 넣어 주세요";
   input.type = "text";
   input.className = "name__input";

@@ -1,13 +1,17 @@
 const path = require("path");
-const webpack = require("webpack");
+const webpack = require("webpack"); // eslint-disable-line no-unused-vars
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const ExtractWebpackPlugin = require("extract-text-webpack-plugin");
-const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const postcssPresetEnv = require("postcss-preset-env");
+const CompressionPlugin = require("compression-webpack-plugin");
 
 const PATHS = {
-  build: path.join(__dirname, "../dist")
+  build: path.join(__dirname, "../dist"),
+  html: path.join(__dirname, "../src/html")
 };
 
 module.exports = {
@@ -15,25 +19,29 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/,
-        use: ExtractWebpackPlugin.extract({
-          fallback: "style-loader",
-          use: [
-            {
-              loader: "css-loader",
-              options: {
-                importLoaders: 1,
-                minimize: true
-              }
-            },
-            {
-              loader: "postcss-loader"
+        test: /\.p?css$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader
+          },
+          {
+            loader: "css-loader",
+            options: {
+              importLoaders: 1
             }
-          ]
-        })
+          },
+          {
+            loader: "postcss-loader",
+            options: {
+              ident: "postcss",
+              plugins: () => [postcssPresetEnv({ stage: 0 })]
+            }
+          }
+        ]
       },
       {
         test: /\.html$/,
+        include: PATHS.html,
         use: [
           {
             loader: "html-loader",
@@ -44,9 +52,12 @@ module.exports = {
         ]
       },
       {
-        test: /\.(gif|png|jpe?g|svg)$/i,
+        test: /\.(gif|png|jpe?g|svg)(\?[a-z0-9=.]+)?$/i,
+        include: PATHS.html,
         use: [
-          "file-loader",
+          {
+            loader: "file-loader"
+          },
           {
             loader: "image-webpack-loader",
             options: {
@@ -92,7 +103,7 @@ module.exports = {
       template: "./src/html/index.html",
       filename: "index.html",
       inject: "body",
-      hash: true,
+      hash: false,
       minify: {
         removeAttributeQuotes: true,
         collapseWhitespace: true,
@@ -101,39 +112,44 @@ module.exports = {
         removeEmptyAttributes: true,
         minifyCSS: true
       }
+    }),
+    new MiniCssExtractPlugin({
+      filename: "[name].[hash].css"
+    }),
+    new CompressionPlugin({
+      filename: "[path].gz[query]",
+      test: /\.(js|css|html|json|ico|svg|eot|otf|ttf)$/,
+      algorithm: "gzip",
+      threshold: 10240,
+      minRatio: 0.8
     })
   ],
   optimization: {
     minimizer: [
+      new OptimizeCssAssetsPlugin({}),
       new UglifyJsPlugin({
+        test: "[name].[hash].js",
+        cache: true,
+        parallel: 4,
+        sourceMap: true,
+        extractComments: true,
         uglifyOptions: {
           warnings: false,
           parse: {},
-          mangle: true,
+          compress: {},
+          mangle: true, // Note `mangle.properties` is `false` by default.
+          output: null,
           toplevel: false,
           nameCache: null,
-          ie8: true,
-          keep_fnames: false,
-          output: {
-            comments: false // remove comments
-          },
-          compress: {
-            unused: true,
-            dead_code: true, // big one--strip code that will never execute
-            warnings: false, // good for prod apps so users can't peek behind curtain
-            drop_debugger: true,
-            conditionals: true,
-            evaluate: true,
-            drop_console: true, // strips console statements
-            sequences: true,
-            booleans: true
-          },
-          cache: true,
-          parallel: true,
-          sourceMap: true // set to true if you want JS source maps
+          ie8: false,
+          keep_fnames: false
         }
-      }),
-      new OptimizeCssAssetsPlugin({})
+      })
     ]
+  },
+  output: {
+    path: PATHS.build,
+    filename: "[name].[hash].js",
+    chunkFilename: "[name].[hash].js"
   }
 };

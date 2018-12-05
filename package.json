@@ -5,7 +5,7 @@
   "main": "index.html",
   "homepage": "https://kneeprayer.github.io/webwallpaper",
   "repository": "https://github.com/kneeprayer/webwallpaper.git",
-  "author": "Seunghoon Lee <kneeprayer@gmail.com>",
+  "author": "kneeprayer <kneeprayer@gmail.com>",
   "private": true,
   "license": "MIT",
   "scripts": {
@@ -16,25 +16,44 @@
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
+    "@pwa/cli": "latest",
     "babel-loader": "^8.0.4",
     "babel-polyfill": "^6.26.0",
+    "chunk-manifest-webpack-plugin": "^1.1.2",
     "clean-webpack-plugin": "^0.1.19",
+    "compression-webpack-plugin": "^2.0.0",
     "css-loader": "^1.0.1",
+    "eslint-plugin-standard": "^4.0.0",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "file-loader": "^2.0.0",
     "gh-pages": "^2.0.1",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
+    "image-webpack-loader": "^4.5.0",
+    "json-loader": "^0.5.7",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
-    "postcss-cssnext": "^3.1.0",
     "postcss-loader": "^3.0.0",
+    "postcss-preset-env": "^6.4.0",
     "style-loader": "^0.23.1",
+    "uglifyjs-webpack-plugin": "^2.0.1",
     "webpack": "^4.23.1",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.10",
+    "webpack-manifest-plugin": "^2.0.4",
     "webpack-merge": "^4.1.4"
   },
   "dependencies": {
+    "es6-promise": "^4.2.5",
+    "ganalytics": "^3.0.0",
+    "isomorphic-fetch": "^2.2.1",
+    "sirv-cli": "^0.2.0",
     "unsplash-js": "^4.8.0"
-  }
+  },
+  "browserslist": [
+    ">0.25%",
+    "last 1 version",
+    "not ie_mob 11",
+    "not ie 11",
+    "not dead"
+  ]
 }

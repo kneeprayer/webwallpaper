@@ -1,3 +1,4 @@
+import fetch from "isomorphic-fetch";
 const API_KEY = "d64dc2934e936b8ea61c3f017d08693c";
 const WEATHER_API = "https://api.openweathermap.org/data/2.5/weather?";
 
@@ -24,7 +25,7 @@ function handleGeoSuccess(position) {
     lat,
     lng
   };
-  localStorage.setItem("coords", JSON.stringify(coords));
+  window.localStorage.setItem("coords", JSON.stringify(coords));
   getWeather(coords);
 }
 
@@ -33,11 +34,10 @@ function handleGeoFailure() {
 }
 
 function loadWeather() {
-  const currentCoords = localStorage.getItem("coords");
+  const currentCoords = window.localStorage.getItem("coords");
   if (currentCoords !== null) {
     const parsedCoords = JSON.parse(currentCoords);
     getWeather(parsedCoords);
-    return;
   } else {
     navigator.geolocation.getCurrentPosition(
       handleGeoSuccess,

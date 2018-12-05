@@ -1,15 +1,16 @@
 const clock = document.querySelector(".js-clock .clock__text");
-var viewClockMode = "Hangul";
+var viewClockMode = JSON.parse(window.localStorage.getItem("clock"));
 
 function getTimeHangul(hours, minutes, seconds) {
   const now = new Date();
   let time;
   switch (parseInt(now.getHours() / 12)) {
     case 0:
-      time = " 오 전";
+      time = "오전";
       break;
     case 1:
-      time = " 오 후";
+      time = "오후";
+      break;
   }
 
   switch (now.getHours() % 12) {
@@ -29,28 +30,28 @@ function getTimeHangul(hours, minutes, seconds) {
       time += " 네";
       break;
     case 5:
-      time += " 다 섯";
+      time += " 다섯";
       break;
     case 6:
-      time += " 여 섯";
+      time += " 여섯";
       break;
     case 7:
-      time += " 일 곱";
+      time += " 일곱";
       break;
     case 8:
-      time += " 여 덟";
+      time += " 여덟";
       break;
     case 9:
-      time += " 아 홉";
+      time += " 아홉";
       break;
     case 10:
       time += " 열";
       break;
     case 11:
-      time += " 열 한";
+      time += " 열한";
       break;
     case 12:
-      time += " 열 두";
+      time += " 열두";
       break;
   }
 
@@ -107,6 +108,8 @@ function getTimeHangul(hours, minutes, seconds) {
 
   if (now.getMinutes() != 0) {
     time += " 분<br>";
+  } else {
+    time += "<br>";
   }
 
   switch (parseInt(now.getSeconds() / 10)) {
@@ -159,7 +162,9 @@ function getTimeHangul(hours, minutes, seconds) {
   }
 
   if (now.getSeconds() != 0) {
-    time += " 초";
+    time += " 초<br>";
+  } else {
+    time += "<br>";
   }
   clock.innerHTML = time;
   return;
@@ -180,11 +185,31 @@ function getTimeNumber() {
 }
 
 function getTime() {
+  if (!viewClockMode) {
+    viewClockMode = "Hangul";
+    clock.classList.add("clock__hangul");
+    window.localStorage.setItem("clock", JSON.stringify(viewClockMode));
+  }
+
   if (viewClockMode == "Number") {
+    clock.classList.remove("clock__hangul");
     getTimeNumber();
   } else {
+    clock.classList.add("clock__hangul");
     getTimeHangul();
   }
+}
+
+function toggleClock() {
+  if (viewClockMode == "Number") {
+    viewClockMode = "Hangul";
+    clock.classList.add("clock__hangul");
+  } else {
+    viewClockMode = "Number";
+    clock.classList.remove("clock__hangul");
+  }
+  window.localStorage.setItem("clock", JSON.stringify(viewClockMode));
+  getTime();
 }
 
 function init() {
@@ -193,14 +218,6 @@ function init() {
   return;
 }
 
-clock.addEventListener("click", function() {
-  if (viewClockMode == "Number") {
-    viewClockMode = "Hangul";
-  } else {
-    viewClockMode = "Number";
-  }
-  this.classList.toggle("clock__hangul");
-  getTime();
-});
+clock.addEventListener("click", toggleClock);
 
 init();
