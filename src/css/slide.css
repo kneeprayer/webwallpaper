@@ -1,11 +1,5 @@
 .slideBackground {
   content: "";
-  -webkit-transition-name: fade-in;
-  -webkit-transition-duration: 3s;
-  transition: background-image 1.5s ease-out;
-  transition-delay: 0.5s;
-  transition-duration: 3s;
-  transition-timing-function: ease-out;
   position: fixed;
   width: 100%;
   height: 100%;
@@ -19,6 +13,38 @@
   scroll-behavior: smooth;
 }
 
+.visible {
+  -webkit-animation-name: fade-in;
+  -webkit-animation-duration: 3s;
+  animation-name: fade-in;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.invisible {
+  -webkit-animation-name: fade-out;
+  -webkit-animation-duration: 3s;
+  animation-name: fade-out;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.slideBackground__img{
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
 @keyframes fade-in {
   0% {
     opacity: 0;
@@ -27,6 +53,16 @@
     opacity: 1;
   }
 }
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 
 .slideLeft {
   position: absolute;

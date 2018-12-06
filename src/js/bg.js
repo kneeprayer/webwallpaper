@@ -7,6 +7,7 @@ const locationContainer = document.querySelector(".js-location span");
 // eslint-disable-next-line no-unused-vars
 let dragStartX = null;
 let unsplash = null;
+var bgIndex = 0;
 
 function sleep(waitMsec) {
   var startMsec = new Date();
@@ -54,14 +55,29 @@ function loadBackground() {
     } else if (typeof parsedImage === "undefined" || parsedImage.length < 5) {
       getBackground();
       sleep(1000);
-    } else {
-      slideBackground.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)), url("${
-        parsedImage[0].url
-      }")`;
-      locationContainer.innerHTML = `${parsedImage[0].name}, ${
-        parsedImage[0].city
-      }, ${parsedImage[0].country}`;
+    } else if (
+      slideBackground.getElementsByClassName("slideBackground__img").length <= 5
+    ) {
+      var i = 0;
+      parsedImage.forEach(e => {
+        var img = document.createElement("div");
+        img.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)), url("${
+          e.url
+        }")`;
+        img.setAttribute("id", `bg${i}`);
+        img.classList.add("slideBackground__img");
+        if (i == 0) {
+          img.classList.add("visible");
+        } else {
+          img.classList.add("invisible");
+        }
+        slideBackground.appendChild(img);
+        ++i;
+      });
     }
+    locationContainer.innerHTML = `${parsedImage[0].name}, ${
+      parsedImage[0].city
+    }, ${parsedImage[0].country}`;
   }
 }
 
@@ -75,17 +91,31 @@ function removeBackgroundImage() {
 function rotateBackgroundImage() {
   var savedImage = window.localStorage.getItem("bg");
   var myImageArray = JSON.parse(savedImage).myImages;
-  myImageArray.unshift(myImageArray.pop());
-  window.localStorage.setItem("bg", JSON.stringify({ myImages: myImageArray }));
-  loadBackground();
+  var currentBG = document.getElementById(`bg${bgIndex}`);
+  currentBG.classList.remove("visible");
+  currentBG.classList.add("invisible");
+  bgIndex++;
+  if (bgIndex >= myImageArray.length) {
+    bgIndex = 0;
+  }
+  currentBG = document.getElementById(`bg${bgIndex}`);
+  currentBG.classList.remove("invisible");
+  currentBG.classList.add("visible");
 }
 
 function reverseRotateBackgroundImage() {
   var savedImage = window.localStorage.getItem("bg");
   var myImageArray = JSON.parse(savedImage).myImages;
-  myImageArray.push(myImageArray.shift());
-  window.localStorage.setItem("bg", JSON.stringify({ myImages: myImageArray }));
-  loadBackground();
+  var currentBG = document.getElementById(`bg${bgIndex}`);
+  currentBG.classList.remove("visible");
+  currentBG.classList.add("invisible");
+  bgIndex--;
+  if (bgIndex < 0) {
+    bgIndex = myImageArray.length - 1;
+  }
+  currentBG = document.getElementById(`bg${bgIndex}`);
+  currentBG.classList.remove("invisible");
+  currentBG.classList.add("visible");
 }
 
 function saveBackground(imageUrl, city, country, name) {
@@ -139,7 +169,7 @@ function getBackground() {
 function initApp() {
   initUnsplash();
   loadBackground();
-  setInterval(rotateBackgroundImage, 60000);
+  setInterval(rotateBackgroundImage, 10000);
 }
 
 slideLeft.addEventListener("click", rotateBackgroundImage);
