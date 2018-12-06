@@ -866,7 +866,7 @@ function getBackground() {
 function initApp() {
   initUnsplash();
   loadBackground();
-  setInterval(rotateBackgroundImage, 60000);
+  setInterval(rotateBackgroundImage, 10000);
 }
 
 slideLeft.addEventListener("click", rotateBackgroundImage);
