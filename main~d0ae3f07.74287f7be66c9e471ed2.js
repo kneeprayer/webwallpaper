@@ -11,7 +11,7 @@ module.exports = __webpack_require__.p + "602ea1a448fe2bc93709ef9c78da9e55.png";
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(132);
-module.exports = __webpack_require__(376);
+module.exports = __webpack_require__(377);
 
 
 /***/ }),
@@ -75,35 +75,42 @@ module.exports = __webpack_require__(376);
 /***/ 342:
 /***/ (function(module, exports, __webpack_require__) {
 
-const apple_icon_57_57 = __webpack_require__(343);
+// extracted by mini-css-extract-plugin
 
-const apple_icon_60_60 = __webpack_require__(344);
+/***/ }),
+
+/***/ 343:
+/***/ (function(module, exports, __webpack_require__) {
+
+const apple_icon_57_57 = __webpack_require__(344);
+
+const apple_icon_60_60 = __webpack_require__(345);
 
 const apple_icon_72_72 = __webpack_require__(126);
 
 const apple_icon_76_76 = __webpack_require__(126);
 
-const apple_icon_114_114 = __webpack_require__(345);
+const apple_icon_114_114 = __webpack_require__(346);
 
-const apple_icon_120_120 = __webpack_require__(346);
+const apple_icon_120_120 = __webpack_require__(347);
 
-const apple_icon_144_144 = __webpack_require__(347);
+const apple_icon_144_144 = __webpack_require__(348);
 
-const apple_icon_152_152 = __webpack_require__(348);
+const apple_icon_152_152 = __webpack_require__(349);
 
-const apple_icon_180_180 = __webpack_require__(349);
+const apple_icon_180_180 = __webpack_require__(350);
 
-const apple_icon_192_192 = __webpack_require__(350);
+const apple_icon_192_192 = __webpack_require__(351);
 
-const favicon_16_16 = __webpack_require__(351);
+const favicon_16_16 = __webpack_require__(352);
 
-const favicon_32_32 = __webpack_require__(352);
+const favicon_32_32 = __webpack_require__(353);
 
-const favicon_96_96 = __webpack_require__(353);
+const favicon_96_96 = __webpack_require__(354);
 
-const ms_icon_144_144 = __webpack_require__(354);
+const ms_icon_144_144 = __webpack_require__(355);
 
-const manifest = __webpack_require__(355);
+const manifest = __webpack_require__(356);
 
 var innerHtml = `
     <link rel="apple-touch-icon" sizes="57x57" href="` + apple_icon_57_57 + `">
@@ -128,122 +135,121 @@ document.getElementsByTagName("head")[0].insertAdjacentHTML("beforeend", innerHt
 
 /***/ }),
 
-/***/ 343:
+/***/ 344:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "245db91b2b6a119816f10e48e455a760.png";
 
 /***/ }),
 
-/***/ 344:
+/***/ 345:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "8f36ca233dcbaa21621a9b02c1471ae6.png";
 
 /***/ }),
 
-/***/ 345:
+/***/ 346:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "f43235f532648237571183d3daf076f3.png";
 
 /***/ }),
 
-/***/ 346:
+/***/ 347:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "280b4d0a396bc52fa3147152af50e6d7.png";
 
 /***/ }),
 
-/***/ 347:
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "1f769998eb7dbcdfbee3f972eb50f3f7.png";
-
-/***/ }),
-
 /***/ 348:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "0542ef827d62c48cf01511efd2e2eb00.png";
+module.exports = __webpack_require__.p + "1f769998eb7dbcdfbee3f972eb50f3f7.png";
 
 /***/ }),
 
 /***/ 349:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "23159d2ccd00855611c16c1725b4f574.png";
+module.exports = __webpack_require__.p + "0542ef827d62c48cf01511efd2e2eb00.png";
 
 /***/ }),
 
 /***/ 350:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "58fdda486d3f41268b1da856787107dc.png";
+module.exports = __webpack_require__.p + "23159d2ccd00855611c16c1725b4f574.png";
 
 /***/ }),
 
 /***/ 351:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "d54416a23e17125bb610de36533b6acf.png";
+module.exports = __webpack_require__.p + "58fdda486d3f41268b1da856787107dc.png";
 
 /***/ }),
 
 /***/ 352:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "f820826bccb9d04a6fbeb7a8c109a0d6.png";
+module.exports = __webpack_require__.p + "d54416a23e17125bb610de36533b6acf.png";
 
 /***/ }),
 
 /***/ 353:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "7cb90db60464f38ddee0c80905a9e480.png";
+module.exports = __webpack_require__.p + "f820826bccb9d04a6fbeb7a8c109a0d6.png";
 
 /***/ }),
 
 /***/ 354:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "1f769998eb7dbcdfbee3f972eb50f3f7.png";
+module.exports = __webpack_require__.p + "7cb90db60464f38ddee0c80905a9e480.png";
 
 /***/ }),
 
 /***/ 355:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "1f769998eb7dbcdfbee3f972eb50f3f7.png";
+
+/***/ }),
+
+/***/ 356:
 /***/ (function(module) {
 
 module.exports = {"name":"App","icons":[{"src":"/android-icon-36x36.png","sizes":"36x36","type":"image/png","density":"0.75"},{"src":"/android-icon-48x48.png","sizes":"48x48","type":"image/png","density":"1.0"},{"src":"/android-icon-72x72.png","sizes":"72x72","type":"image/png","density":"1.5"},{"src":"/android-icon-96x96.png","sizes":"96x96","type":"image/png","density":"2.0"},{"src":"/android-icon-144x144.png","sizes":"144x144","type":"image/png","density":"3.0"},{"src":"/android-icon-192x192.png","sizes":"192x192","type":"image/png","density":"4.0"}]};
 
 /***/ }),
 
-/***/ 356:
+/***/ 357:
 /***/ (function(module, exports) {
 
 document.getElementById("app").innerHTML = `
     <div class="slideBackground"></div>
-    <div class="welcome">
-        <div class="js-name name"></div>
-    </div>
-    <section class="center">
-        <div>
+    <header class="js-header">
+        <div class="welcome">
+            <div class="js-name name"></div>
+        </div>
+        <div class="center">
             <form class="js-to-do to-do">
                 <input class="js-add-to-do to-do__add-to-do" placeholder="오늘 해야 할 일은?" type="text" aria-label="todo"/>
             </form>
-            <ul class="js-list list"></ul>
         </div>
+        <div class="js-weather weather">
+            <span class="weather__text"></span>
+        </div>
+    </header>
+    <section>
+        <ul class="js-list list"></ul>
     </section>
-
     <div class="js-location location">
         <span class="location__text"></span>
     </div>
-
-    <div class="js-weather weather">
-        <span class="weather__text"></span>
-    </div>
-
     <div class="js-clock clock">
         <h3 class="clock__text clock__hangul">00:00:00</h3>
     </div>
@@ -254,7 +260,7 @@ document.getElementById("app").innerHTML = `
 
 /***/ }),
 
-/***/ 372:
+/***/ 373:
 /***/ (function(module, exports) {
 
 const clock = document.querySelector(".js-clock .clock__text");
@@ -522,7 +528,7 @@ init();
 
 /***/ }),
 
-/***/ 374:
+/***/ 375:
 /***/ (function(module, exports) {
 
 const nameContainer = document.querySelector(".js-name");
@@ -574,7 +580,7 @@ init();
 
 /***/ }),
 
-/***/ 375:
+/***/ 376:
 /***/ (function(module, exports) {
 
 const form = document.querySelector(".js-to-do"),
@@ -653,7 +659,7 @@ init();
 
 /***/ }),
 
-/***/ 376:
+/***/ 377:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -665,29 +671,32 @@ var styles = __webpack_require__(334);
 // EXTERNAL MODULE: ./src/css/main.css
 var main = __webpack_require__(335);
 
+// EXTERNAL MODULE: ./src/css/header.css
+var header = __webpack_require__(336);
+
 // EXTERNAL MODULE: ./src/css/location.css
-var css_location = __webpack_require__(336);
+var css_location = __webpack_require__(337);
 
 // EXTERNAL MODULE: ./src/css/clock.css
-var clock = __webpack_require__(337);
+var clock = __webpack_require__(338);
 
 // EXTERNAL MODULE: ./src/css/weather.css
-var weather = __webpack_require__(338);
+var weather = __webpack_require__(339);
 
 // EXTERNAL MODULE: ./src/css/welcome.css
-var welcome = __webpack_require__(339);
+var welcome = __webpack_require__(340);
 
 // EXTERNAL MODULE: ./src/css/todo.css
-var todo = __webpack_require__(340);
+var todo = __webpack_require__(341);
 
 // EXTERNAL MODULE: ./src/css/slide.css
-var slide = __webpack_require__(341);
+var slide = __webpack_require__(342);
 
 // EXTERNAL MODULE: ./src/js/head.js
-var head = __webpack_require__(342);
+var head = __webpack_require__(343);
 
 // EXTERNAL MODULE: ./src/js/body.js
-var body = __webpack_require__(356);
+var body = __webpack_require__(357);
 
 // EXTERNAL MODULE: ./node_modules/unsplash-js/lib/unsplash.js
 var unsplash = __webpack_require__(91);
@@ -698,7 +707,8 @@ var unsplash_default = /*#__PURE__*/__webpack_require__.n(unsplash);
 const slideBackground = document.querySelector(".slideBackground");
 const slideLeft = document.querySelector(".slideLeft");
 const slideRight = document.querySelector(".slideRight");
-const locationContainer = document.querySelector(".js-location span"); // eslint-disable-next-line no-unused-vars
+const locationContainer = document.querySelector(".js-location span");
+const loader = document.querySelector(".loader"); // eslint-disable-next-line no-unused-vars
 
 let dragStartX = null;
 let bg_unsplash = null;
@@ -869,6 +879,10 @@ function initApp() {
   setInterval(rotateBackgroundImage, 10000);
 }
 
+window.onload = function () {
+  loader.classList.add("loaderTurnOff");
+};
+
 slideLeft.addEventListener("click", rotateBackgroundImage);
 slideRight.addEventListener("click", reverseRotateBackgroundImage);
 slideBackground.addEventListener("drag", () => {}, false);
@@ -883,7 +897,7 @@ slideBackground.addEventListener("dragend", function (event) {
 }, false);
 initApp();
 // EXTERNAL MODULE: ./src/js/clock.js
-var js_clock = __webpack_require__(372);
+var js_clock = __webpack_require__(373);
 
 // EXTERNAL MODULE: ./node_modules/isomorphic-fetch/fetch-npm-browserify.js
 var fetch_npm_browserify = __webpack_require__(130);
@@ -935,12 +949,13 @@ function init() {
 
 init();
 // EXTERNAL MODULE: ./src/js/greeting.js
-var greeting = __webpack_require__(374);
+var greeting = __webpack_require__(375);
 
 // EXTERNAL MODULE: ./src/js/todo.js
-var js_todo = __webpack_require__(375);
+var js_todo = __webpack_require__(376);
 
 // CONCATENATED MODULE: ./src/js/app.js
+
 
 
 
