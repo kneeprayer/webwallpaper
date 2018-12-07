@@ -880,7 +880,7 @@ function initApp() {
 }
 
 window.onload = function () {
-  sleep(3000);
+  sleep(10000);
   loader.classList.add("loaderTurnOff");
 };
 
