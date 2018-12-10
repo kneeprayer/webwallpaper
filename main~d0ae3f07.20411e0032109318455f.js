@@ -11,7 +11,7 @@ module.exports = __webpack_require__.p + "602ea1a448fe2bc93709ef9c78da9e55.png";
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(132);
-module.exports = __webpack_require__(377);
+module.exports = __webpack_require__(378);
 
 
 /***/ }),
@@ -261,6 +261,13 @@ document.getElementById("app").innerHTML = `
 /***/ }),
 
 /***/ 373:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "ac72fffc9b0f3c4470b10b27092b982a.gif";
+
+/***/ }),
+
+/***/ 374:
 /***/ (function(module, exports) {
 
 const clock = document.querySelector(".js-clock .clock__text");
@@ -528,7 +535,7 @@ init();
 
 /***/ }),
 
-/***/ 375:
+/***/ 376:
 /***/ (function(module, exports) {
 
 const nameContainer = document.querySelector(".js-name");
@@ -580,7 +587,7 @@ init();
 
 /***/ }),
 
-/***/ 376:
+/***/ 377:
 /***/ (function(module, exports) {
 
 const form = document.querySelector(".js-to-do"),
@@ -659,7 +666,7 @@ init();
 
 /***/ }),
 
-/***/ 377:
+/***/ 378:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -704,11 +711,17 @@ var unsplash_default = /*#__PURE__*/__webpack_require__.n(unsplash);
 
 // CONCATENATED MODULE: ./src/js/bg.js
 
+
+const loading = __webpack_require__(373);
+
 const slideBackground = document.querySelector(".slideBackground");
 const slideLeft = document.querySelector(".slideLeft");
 const slideRight = document.querySelector(".slideRight");
 const locationContainer = document.querySelector(".js-location span");
-const spinner = document.querySelector(".spinner"); // eslint-disable-next-line no-unused-vars
+const spinner = document.querySelector(".spinner");
+var img = document.createElement("img");
+img.src = loading;
+spinner.appendChild(img); // eslint-disable-next-line no-unused-vars
 
 let dragStartX = null;
 let bg_unsplash = null;
@@ -897,7 +910,7 @@ slideBackground.addEventListener("dragend", function (event) {
 }, false);
 initApp();
 // EXTERNAL MODULE: ./src/js/clock.js
-var js_clock = __webpack_require__(373);
+var js_clock = __webpack_require__(374);
 
 // EXTERNAL MODULE: ./node_modules/isomorphic-fetch/fetch-npm-browserify.js
 var fetch_npm_browserify = __webpack_require__(130);
@@ -949,10 +962,10 @@ function init() {
 
 init();
 // EXTERNAL MODULE: ./src/js/greeting.js
-var greeting = __webpack_require__(375);
+var greeting = __webpack_require__(376);
 
 // EXTERNAL MODULE: ./src/js/todo.js
-var js_todo = __webpack_require__(376);
+var js_todo = __webpack_require__(377);
 
 // CONCATENATED MODULE: ./src/js/app.js
 
