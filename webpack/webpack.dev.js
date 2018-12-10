@@ -43,7 +43,7 @@ module.exports = {
     open: true
   },
   resolve: {
-    extensions: [".js", ".json", ".png"]
+    extensions: [".js", ".json", ".png", ".gif"]
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),

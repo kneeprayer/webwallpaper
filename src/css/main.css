@@ -36,7 +36,7 @@ input {
   background: none;
   appearance: none;
   border: 0;
-  font-size: 22px;
+  font-size: 1em;
   color: white;
   border-bottom: 2px solid white;
 }

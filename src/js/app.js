@@ -1,5 +1,6 @@
 import "../css/styles.css";
 import "../css/main.css";
+import "../css/header.css";
 import "../css/location.css";
 import "../css/clock.css";
 import "../css/weather.css";

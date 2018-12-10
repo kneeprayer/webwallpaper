@@ -27,14 +27,14 @@ const commonConfig = {
           loader: "babel-loader"
         }
       },
-      // {
-      //   test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-      //   loader: "url-loader?limit=10000&mimetype=application/font-woff"
-      // },
-      // {
-      //   test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-      //   loader: "file-loader"
-      // },
+      {
+        test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        loader: "url-loader?limit=10000&mimetype=application/font-woff"
+      },
+      {
+        test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        loader: "file-loader"
+      },
       {
         test: /\.(gif|png|jpe?g|svg)(\?[a-z0-9=.]+)?$/i,
         exclude: /(node_modules)/,
@@ -49,9 +49,6 @@ const commonConfig = {
               limit: 100000
             }
           }
-          // {
-          //   loader: "img-loader"
-          // }
         ]
       }
     ]

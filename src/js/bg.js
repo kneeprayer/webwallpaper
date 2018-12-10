@@ -1,9 +1,9 @@
 import Unsplash, { toJson } from "unsplash-js";
-
 const slideBackground = document.querySelector(".slideBackground");
 const slideLeft = document.querySelector(".slideLeft");
 const slideRight = document.querySelector(".slideRight");
 const locationContainer = document.querySelector(".js-location span");
+const spinner = document.querySelector(".spinner");
 // eslint-disable-next-line no-unused-vars
 let dragStartX = null;
 let unsplash = null;
@@ -171,6 +171,11 @@ function initApp() {
   loadBackground();
   setInterval(rotateBackgroundImage, 10000);
 }
+
+window.addEventListener("load", function() {
+  sleep(3000);
+  spinner.classList.add("loaderTurnOff");
+});
 
 slideLeft.addEventListener("click", rotateBackgroundImage);
 slideRight.addEventListener("click", reverseRotateBackgroundImage);
