@@ -7,7 +7,7 @@
 // on the global object (window or self)
 //
 // Return that as the export for use in Webpack, Browserify etc.
-__webpack_require__(375);
+__webpack_require__(374);
 module.exports = self.fetch.bind(self);
 
 
