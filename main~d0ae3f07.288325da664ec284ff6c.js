@@ -11,7 +11,7 @@ module.exports = __webpack_require__.p + "602ea1a448fe2bc93709ef9c78da9e55.png";
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(132);
-module.exports = __webpack_require__(378);
+module.exports = __webpack_require__(377);
 
 
 /***/ }),
@@ -110,9 +110,7 @@ const favicon_96_96 = __webpack_require__(354);
 
 const ms_icon_144_144 = __webpack_require__(355);
 
-const loading = __webpack_require__(356);
-
-const manifest = __webpack_require__(357);
+const manifest = __webpack_require__(356);
 
 var innerHtml = `
     <link rel="apple-touch-icon" sizes="57x57" href="` + apple_icon_57_57 + `">
@@ -222,20 +220,13 @@ module.exports = __webpack_require__.p + "1f769998eb7dbcdfbee3f972eb50f3f7.png";
 /***/ }),
 
 /***/ 356:
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "ac72fffc9b0f3c4470b10b27092b982a.gif";
-
-/***/ }),
-
-/***/ 357:
 /***/ (function(module) {
 
 module.exports = {"name":"App","icons":[{"src":"/android-icon-36x36.png","sizes":"36x36","type":"image/png","density":"0.75"},{"src":"/android-icon-48x48.png","sizes":"48x48","type":"image/png","density":"1.0"},{"src":"/android-icon-72x72.png","sizes":"72x72","type":"image/png","density":"1.5"},{"src":"/android-icon-96x96.png","sizes":"96x96","type":"image/png","density":"2.0"},{"src":"/android-icon-144x144.png","sizes":"144x144","type":"image/png","density":"3.0"},{"src":"/android-icon-192x192.png","sizes":"192x192","type":"image/png","density":"4.0"}]};
 
 /***/ }),
 
-/***/ 358:
+/***/ 357:
 /***/ (function(module, exports) {
 
 document.getElementById("app").innerHTML = `
@@ -269,7 +260,7 @@ document.getElementById("app").innerHTML = `
 
 /***/ }),
 
-/***/ 374:
+/***/ 373:
 /***/ (function(module, exports) {
 
 const clock = document.querySelector(".js-clock .clock__text");
@@ -537,7 +528,7 @@ init();
 
 /***/ }),
 
-/***/ 376:
+/***/ 375:
 /***/ (function(module, exports) {
 
 const nameContainer = document.querySelector(".js-name");
@@ -589,7 +580,7 @@ init();
 
 /***/ }),
 
-/***/ 377:
+/***/ 376:
 /***/ (function(module, exports) {
 
 const form = document.querySelector(".js-to-do"),
@@ -668,7 +659,7 @@ init();
 
 /***/ }),
 
-/***/ 378:
+/***/ 377:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -705,7 +696,7 @@ var slide = __webpack_require__(342);
 var head = __webpack_require__(343);
 
 // EXTERNAL MODULE: ./src/js/body.js
-var body = __webpack_require__(358);
+var body = __webpack_require__(357);
 
 // EXTERNAL MODULE: ./node_modules/unsplash-js/lib/unsplash.js
 var unsplash = __webpack_require__(91);
@@ -906,7 +897,7 @@ slideBackground.addEventListener("dragend", function (event) {
 }, false);
 initApp();
 // EXTERNAL MODULE: ./src/js/clock.js
-var js_clock = __webpack_require__(374);
+var js_clock = __webpack_require__(373);
 
 // EXTERNAL MODULE: ./node_modules/isomorphic-fetch/fetch-npm-browserify.js
 var fetch_npm_browserify = __webpack_require__(130);
@@ -958,10 +949,10 @@ function init() {
 
 init();
 // EXTERNAL MODULE: ./src/js/greeting.js
-var greeting = __webpack_require__(376);
+var greeting = __webpack_require__(375);
 
 // EXTERNAL MODULE: ./src/js/todo.js
-var js_todo = __webpack_require__(377);
+var js_todo = __webpack_require__(376);
 
 // CONCATENATED MODULE: ./src/js/app.js
 

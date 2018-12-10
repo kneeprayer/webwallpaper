@@ -7,7 +7,7 @@
 // on the global object (window or self)
 //
 // Return that as the export for use in Webpack, Browserify etc.
-__webpack_require__(375);
+__webpack_require__(374);
 module.exports = self.fetch.bind(self);
 
 
@@ -217,7 +217,7 @@ module.exports = __webpack_require__(18);
 
 /***/ }),
 
-/***/ 361:
+/***/ 360:
 /***/ (function(module, exports) {
 
 // Filename: formurlencoded.js
@@ -286,7 +286,7 @@ var formurlencoded = module.exports = function (data, opts) {
 
 /***/ }),
 
-/***/ 369:
+/***/ 368:
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {/**
