@@ -1,8 +1,8 @@
 const form = document.querySelector(".todo-form"),
   input = document.querySelector(".todo-input"),
-  todoList = document.getElementById("todo"),
-  doingList = document.getElementById("doing"),
-  doneList = document.getElementById("done");
+  todoList = document.querySelector("#todo .js-list"),
+  doingList = document.querySelector("#doing .js-list"),
+  doneList = document.querySelector("#done .js-list");
 
 let toDos = [];
 
