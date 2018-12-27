@@ -235,18 +235,29 @@ document.getElementById("app").innerHTML = `
         <div class="welcome">
             <div class="js-name name"></div>
         </div>
-        <div class="center">
-            <form class="js-to-do to-do">
-                <input class="js-add-to-do to-do__add-to-do" placeholder="오늘 해야 할 일은?" type="text" aria-label="todo"/>
+        <div class="head-center">
+            <form class="todo-form">
+                <input class="todo-input" placeholder="오늘 해야 할 일은?" type="text" aria-label="todo"/>
             </form>
         </div>
         <div class="js-weather weather">
             <span class="weather__text"></span>
         </div>
     </header>
-    <section>
-        <ul class="js-list list"></ul>
+    <section class="center-box">
+        <div class="todo-box">
+            <div class="todo-section" id="todo">해야할 일
+                <ul class="js-list"></ul>
+            </div>
+            <div class="todo-section" id="doing">진행중
+                <ul class="js-list"></ul>
+            </div>
+            <div class="todo-section" id="done">완료
+                <ul class="js-list"></ul>
+            </div>
+        </div>
     </section>
+
     <div class="js-location location">
         <span class="location__text"></span>
     </div>
@@ -583,9 +594,11 @@ init();
 /***/ 376:
 /***/ (function(module, exports) {
 
-const form = document.querySelector(".js-to-do"),
-      input = document.querySelector(".js-add-to-do"),
-      list = document.querySelector(".js-list");
+const form = document.querySelector(".todo-form"),
+      input = document.querySelector(".todo-input"),
+      todoList = document.getElementById("todo"),
+      doingList = document.getElementById("doing"),
+      doneList = document.getElementById("done");
 let toDos = [];
 
 function persistToDos() {
@@ -593,10 +606,11 @@ function persistToDos() {
   localStorage.setItem("toDos", stringToDo);
 }
 
-function saveToDo(text) {
+function saveToDo(text, status) {
   const toDoObject = {
     id: toDos.length + 1,
-    value: text
+    value: text,
+    status: status
   };
   toDos.push(toDoObject);
   persistToDos();
@@ -614,27 +628,32 @@ function handleDelete(event) {
   persistToDos();
 }
 
-function addToDo(text) {
+function addToDo(text, status) {
   const toDo = document.createElement("li");
   toDo.className = "toDo";
   toDo.id = toDos.length + 1;
+  toDo.setAttribute("draggable", "true");
+  toDo.setAttribute("aria-grabbed", "false");
+  toDo.setAttribute("tabindex", "0");
   const deleteBtn = document.createElement("span");
-  deleteBtn.innerHTML = "❌";
+  deleteBtn.innerHTML = " ❎ ";
   deleteBtn.className = "toDo__button";
   deleteBtn.addEventListener("click", handleDelete);
   const label = document.createElement("label");
   label.innerHTML = text;
-  toDo.appendChild(deleteBtn);
   toDo.appendChild(label);
-  list.appendChild(toDo);
-  saveToDo(text);
+  toDo.appendChild(deleteBtn);
+  if (status = "todo") todoList.appendChild(toDo);
+  if (status = "doing") todoList.appendChild(doing);
+  if (status = "done") todoList.appendChild(done);
+  saveToDo(text, status);
 }
 
 function onSubmit(event) {
   event.preventDefault();
   const value = input.value;
   input.value = "";
-  addToDo(value);
+  addToDo(value, "todo");
 }
 
 function loadToDos() {
@@ -643,7 +662,7 @@ function loadToDos() {
   if (loadedToDos !== null) {
     const parsedToDos = JSON.parse(loadedToDos);
     parsedToDos.forEach(function (toDo) {
-      addToDo(toDo.value);
+      addToDo(toDo.value, toDo.status);
     });
   }
 
@@ -655,6 +674,52 @@ function init() {
 }
 
 form.addEventListener("submit", onSubmit);
+var dragged;
+/* events fired on the draggable target */
+
+document.addEventListener("drag", function (event) {}, false);
+document.addEventListener("dragstart", function (event) {
+  // store a ref. on the dragged elem
+  dragged = event.target; // make it half transparent
+
+  event.target.style.opacity = 0.5;
+}, false);
+document.addEventListener("dragend", function (event) {
+  // reset the transparency
+  event.target.style.opacity = 1;
+}, false);
+/* events fired on the drop targets */
+
+document.addEventListener("dragover", function (event) {
+  // prevent default to allow drop
+  event.preventDefault();
+}, false);
+document.addEventListener("dragenter", function (event) {
+  // highlight potential drop target when the draggable element enters it
+  if (event.target.className == "todo-section") {
+    event.target.style.opacity = 0.5;
+  }
+}, false);
+document.addEventListener("dragleave", function (event) {
+  // reset background of potential drop target when the draggable element leaves it
+  if (event.target.className == "todo-section") {
+    event.target.style.opacity = 1;
+  }
+}, false);
+document.addEventListener("drop", function (event) {
+  // prevent default action (open as link for some elements)
+  event.preventDefault();
+  targetBoard = event.target.querySelector(".js-list"); // move dragged elem to the selected drop target
+
+  if (event.target.className == "todo-section") {
+    event.target.style.opacity = 1;
+    dragged.parentNode.removeChild(dragged);
+    targetBoard.appendChild(dragged);
+  }
+
+  console.log(event.target.id);
+  console.log(event.dataTransfer);
+}, false);
 init();
 
 /***/ }),
@@ -876,12 +941,12 @@ function getBackground() {
 function initApp() {
   initUnsplash();
   loadBackground();
-  setInterval(rotateBackgroundImage, 10000);
 }
 
 window.addEventListener("load", function () {
-  sleep(3000);
+  sleep(5000);
   spinner.classList.add("loaderTurnOff");
+  setInterval(rotateBackgroundImage, 10000);
 });
 slideLeft.addEventListener("click", rotateBackgroundImage);
 slideRight.addEventListener("click", reverseRotateBackgroundImage);
