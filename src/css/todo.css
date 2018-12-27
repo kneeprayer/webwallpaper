@@ -1,19 +1,91 @@
-.center {
+.head-center {
   display: flex;
-  align-items: flex-start;
-  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 150px;
+  width: 30vw;
+}
+
+.todo-input {
+  margin: auto;
+  width: 100%;
+}
+
+.todo-box {
+  align-items: stretch;
+  position: absolute;
+  height: 70%;
+  top: 10%;
+  left: 0;
+  width: 100vw;
+  list-style: none;
+  
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.todo-section {
+  display: flex;
+  align-content: flex-start;
   justify-content: center;
-}
-
-.center .list {
-  margin-bottom: 20px;
-}
-
-.center .toDo {
+  flex-direction: row;
+  flex-flow: row wrap;
+  text-align: center;
   font-size: 1em;
+  min-width: 22em;
+  max-width: 30vw;
+  width: 100%;
+  height: 100%;
+  background-color:rgba(255, 255, 255, 0.1);
+  margin: auto;
+  margin-left: 0.5em;
+  margin-top: 0.5em;
+  padding: 0.5em 0.5em 0 0.5em;
+  top: 0;
+  border-radius: 15px;
 }
 
-.center .toDo__button {
+.todo-section .js-list {
+  margin-bottom: 20px;
+  opacity: 1;
+  width: 100%;
+}
+
+.todo-section ul {
+  color:  #ffffff;
+  opacity: 1;
+  width: 100%;
+  margin: 10px 0px 10px 0px;
+}
+
+.todo-section li {
+  text-align: left;
+  margin: 2px 0px;
+  list-style-type: none;
+  background-color:rgba(255, 255, 255, 0.2);
+  padding: 2px 10px 2px 8px;
+  border-radius: 0 15px 15px 0;
+  border-style: outset;
+  border-width: 0px 2px 2px 5px;
+  border-color: rgba(0, 0, 0, 0.3) rgba(0, 0, 0, 0.3) rgba(0, 0, 0, 0.3)rgba(255, 255, 255, 0.5);
+  justify-content: space-between;
+  width: 100%;
+}
+
+.todo-section .toDo__button {
+  position: absolute;
+  right: 10px;
   margin-right: 10px;
   cursor: pointer;
+}
+
+.todo-section li:focus, .todo li:focus{
+    outline: none;
 }

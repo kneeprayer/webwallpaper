@@ -169,12 +169,12 @@ function getBackground() {
 function initApp() {
   initUnsplash();
   loadBackground();
-  setInterval(rotateBackgroundImage, 10000);
 }
 
 window.addEventListener("load", function() {
-  sleep(3000);
+  sleep(5000);
   spinner.classList.add("loaderTurnOff");
+  setInterval(rotateBackgroundImage, 10000);
 });
 
 slideLeft.addEventListener("click", rotateBackgroundImage);

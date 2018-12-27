@@ -1,5 +1,9 @@
 {
-    "extends": ["standard", "plugin:prettier/recommended", "prettier/standard"],
+    "extends": ["standard", "plugin:prettier/recommended", "prettier", "prettier/standard"],
+    "plugins": [
+        "prettier",
+        "standard"
+    ],
     "rules": {
         "no-unused-vars": [
             "error",
@@ -28,5 +32,9 @@
                 "callback"
             ]
         ]
+    },
+    "env": {
+        "es6": true,
+        "node": true
     }
 }
