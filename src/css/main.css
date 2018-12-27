@@ -63,3 +63,8 @@ ul {
 ul {
   margin-top: 50px;
 }
+
+#app {
+	width: 100%;
+	height: 100%;
+}
