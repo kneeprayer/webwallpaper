@@ -89,7 +89,11 @@
 
 
 @media only screen and (max-width: 768px) {
+	.center-box {
+		padding: 140px 0 0 0;
+	}
 	.todo-section {
+		min-height: 300px;
 		margin: 0.5rem;
 		width: calc(100% - 1rem);
 	}

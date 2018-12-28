@@ -11,3 +11,15 @@
   background-color: transparent;
   transition: background-color 0.5s linear;
 }
+
+@media only screen and (max-width: 768px) {
+	.js-header {
+		height: 140px;
+		flex-direction: column;
+	}
+	.js-header .head-center {
+			display: block;
+			width: 100%;
+		padding: 0 25px;
+	}
+}
