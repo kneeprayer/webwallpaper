@@ -1,12 +1,12 @@
 .clock {
+  vertical-align: baseline;
   text-align: right;
   position: absolute;
   bottom: 25px;
   right: 25px;
   opacity: 1;
 }
-
-.clock__text {
+.clock > p {
   font-size: 3em;
 }
 

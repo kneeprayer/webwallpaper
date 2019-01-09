@@ -31,7 +31,7 @@ document.getElementById("app").innerHTML = `
         <span class="location__text"></span>
     </div>
     <div class="js-clock clock">
-        <h3 class="clock__text clock__hangul">00:00:00</h3>
+        <p id="clock">00:00:00</p>
     </div>
 
     <div class="slideLeft"></div>

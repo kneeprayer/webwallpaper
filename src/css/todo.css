@@ -27,7 +27,6 @@
   display: -webkit-flex;
   display: flex;
   
-  -webkit-flex-flow: row wrap;
   justify-content: space-around;
   flex-wrap: wrap;
 	width: 100%;
@@ -35,9 +34,24 @@
 }
 
 .todo-section {
+<<<<<<< HEAD
   text-align: center;
   font-size: 1em;
 	width: calc(33.33% - 0.5em);
+=======
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: center;
+  flex-direction: row;
+  text-align: center;
+  font-size: 1em;
+  min-width: 22em;
+  max-width: 30em;
+  width: 30vw;
+>>>>>>> fix some bugs
   height: 100%;
   background-color:rgba(255, 255, 255, 0.1);
   margin: auto;
@@ -77,10 +91,9 @@
 }
 
 .todo-section .toDo__button {
-  position: absolute;
-  right: 10px;
-  margin-right: 10px;
+  margin-right: 5px;
   cursor: pointer;
+  float: right;
 }
 
 .todo-section li:focus, .todo li:focus{
