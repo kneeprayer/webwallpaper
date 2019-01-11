@@ -15,14 +15,14 @@ document.getElementById("app").innerHTML = `
     </header>
     <section class="center-box">
         <div class="todo-box">
-            <div class="todo-section" id="todo">해야할 일
-                <ul class="js-list"></ul>
+            <div class="todo-section" id="todo">
+                <ul class="js-list">해야할 일</ul>
             </div>
-            <div class="todo-section" id="doing">진행중
-                <ul class="js-list"></ul>
+            <div class="todo-section" id="doing">
+                <ul class="js-list">진행중</ul>
             </div>
-            <div class="todo-section" id="done">완료
-                <ul class="js-list"></ul>
+            <div class="todo-section" id="done">
+                <ul class="js-list">완료</ul>
             </div>
         </div>
     </section>
