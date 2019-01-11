@@ -11,11 +11,12 @@
   transition: background-color 0.5s linear;
   margin-bottom: 1em;
   padding: 1em;
+  align-items: baseline;
+  align-content: flex-start;
 }
 
 @media only screen and (max-width: 768px) {
 	.js-header {
-		height: 140px;
 		flex-direction: column;
 	}
 	.js-header .head-center {

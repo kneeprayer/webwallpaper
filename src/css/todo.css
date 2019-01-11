@@ -1,7 +1,6 @@
 .center-box {
 	width: 100%;
 	height: 100%;
-	padding: 70px 0 180px;
 }
 
 .head-center {
@@ -99,9 +98,6 @@
 
 
 @media only screen and (max-width: 768px) {
-	.center-box {
-		padding: 140px 0 0 0;
-	}
 	.todo-section {
     min-height: 18em;
 		margin: 0.5em;
