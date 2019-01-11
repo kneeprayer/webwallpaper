@@ -246,14 +246,14 @@ document.getElementById("app").innerHTML = `
     </header>
     <section class="center-box">
         <div class="todo-box">
-            <div class="todo-section" id="todo">해야할 일
-                <ul class="js-list"></ul>
+            <div class="todo-section" id="todo">
+                <ul class="js-list">해야할 일</ul>
             </div>
-            <div class="todo-section" id="doing">진행중
-                <ul class="js-list"></ul>
+            <div class="todo-section" id="doing">
+                <ul class="js-list">진행중</ul>
             </div>
-            <div class="todo-section" id="done">완료
-                <ul class="js-list"></ul>
+            <div class="todo-section" id="done">
+                <ul class="js-list">완료</ul>
             </div>
         </div>
     </section>
@@ -262,7 +262,7 @@ document.getElementById("app").innerHTML = `
         <span class="location__text"></span>
     </div>
     <div class="js-clock clock">
-        <h3 class="clock__text clock__hangul">00:00:00</h3>
+        <p id="clock">00:00:00</p>
     </div>
 
     <div class="slideLeft"></div>
@@ -274,7 +274,7 @@ document.getElementById("app").innerHTML = `
 /***/ 373:
 /***/ (function(module, exports) {
 
-const clock = document.querySelector(".js-clock .clock__text");
+const clock = document.getElementById("clock");
 var viewClockMode = JSON.parse(window.localStorage.getItem("clock"));
 
 function getTimeHangul(hours, minutes, seconds) {
@@ -596,9 +596,9 @@ init();
 
 const form = document.querySelector(".todo-form"),
       input = document.querySelector(".todo-input"),
-      todoList = document.getElementById("todo"),
-      doingList = document.getElementById("doing"),
-      doneList = document.getElementById("done");
+      todoList = document.querySelector("#todo ul.js-list"),
+      doingList = document.querySelector("#doing ul.js-list"),
+      doneList = document.querySelector("#done ul.js-list");
 let toDos = [];
 
 function persistToDos() {
