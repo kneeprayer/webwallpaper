@@ -1,9 +1,9 @@
 .clock {
-  position: absolute;
+  position: sticky;
   vertical-align: baseline;
   text-align: right;
   bottom: 25px;
-  right: 25px;
+  margin-right: 25px; 
   opacity: 1;
 }
 .clock > p#clock {
@@ -16,6 +16,12 @@ p#clock.clock__hangul {
 
 @media only screen and (max-width: 768px) {
 	.clock {
-		position: Sticky;
+		opacity: 0.5;
 	}
+  .clock > p#clock {
+    font-size: 5em;
+  }
+  p#clock.clock__hangul {
+    font-size: 4em;
+  }
 }
