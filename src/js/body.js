@@ -33,7 +33,6 @@ document.getElementById("app").innerHTML = `
     <div class="js-clock clock">
         <p id="clock">00:00:00</p>
     </div>
-
     <div class="slideLeft"></div>
     <div class="slideRight"></div>
 `;
