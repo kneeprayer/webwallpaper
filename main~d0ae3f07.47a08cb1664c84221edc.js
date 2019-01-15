@@ -264,7 +264,6 @@ document.getElementById("app").innerHTML = `
     <div class="js-clock clock">
         <p id="clock">00:00:00</p>
     </div>
-
     <div class="slideLeft"></div>
     <div class="slideRight"></div>
 `;
@@ -596,23 +595,24 @@ init();
 
 const form = document.querySelector(".todo-form"),
       input = document.querySelector(".todo-input"),
-      todoList = document.querySelector("#todo ul.js-list"),
-      doingList = document.querySelector("#doing ul.js-list"),
-      doneList = document.querySelector("#done ul.js-list");
+      todoList = document.getElementById("todo"),
+      doingList = document.getElementById("doing"),
+      doneList = document.getElementById("done");
 let toDos = [];
+var dragged;
 
 function persistToDos() {
   const stringToDo = JSON.stringify(toDos);
   localStorage.setItem("toDos", stringToDo);
 }
 
-function saveToDo(text, status) {
-  const toDoObject = {
-    id: toDos.length + 1,
+function saveToDo(id, text, status) {
+  const toDo = {
+    id: id,
     value: text,
     status: status
   };
-  toDos.push(toDoObject);
+  toDos.push(toDo);
   persistToDos();
 }
 
@@ -628,13 +628,23 @@ function handleDelete(event) {
   persistToDos();
 }
 
-function addToDo(text, status) {
+function addToDo(id, text, status) {
   const toDo = document.createElement("li");
   toDo.className = "toDo";
-  toDo.id = toDos.length + 1;
+
+  if (id === null) {
+    if (toDos.length === 0) {
+      id = 1;
+      toDo.id = id;
+    } else {
+      id = toDos[toDos.length - 1].id + 1;
+      toDo.id = id;
+    }
+  }
+
   toDo.setAttribute("draggable", "true");
   toDo.setAttribute("aria-grabbed", "false");
-  toDo.setAttribute("tabindex", "0");
+  toDo.setAttribute("tabindex", toDo.id);
   const deleteBtn = document.createElement("span");
   deleteBtn.innerHTML = " ❎ ";
   deleteBtn.className = "toDo__button";
@@ -643,17 +653,38 @@ function addToDo(text, status) {
   label.innerHTML = text;
   toDo.appendChild(label);
   toDo.appendChild(deleteBtn);
-  if (status = "todo") todoList.appendChild(toDo);
-  if (status = "doing") todoList.appendChild(doing);
-  if (status = "done") todoList.appendChild(done);
-  saveToDo(text, status);
+  if (status === "todo") todoList.querySelector("ul").appendChild(toDo);
+  if (status === "doing") doingList.querySelector("ul").appendChild(toDo);
+  if (status === "done") doneList.querySelector("ul").appendChild(toDo);
+  saveToDo(id, text, status);
+}
+
+function moveToDo(dragged, dropped) {
+  var index = 0;
+  var toDoValue = null;
+
+  for (let i = 0; i < toDos.length; i++) {
+    if (parseInt(toDos[i].id) === parseInt(dragged.id)) {
+      toDoValue = {
+        id: toDos[i].id,
+        value: toDos[i].value,
+        status: dropped.target.id
+      };
+      index = i;
+    }
+  }
+
+  toDos.splice(index, 1, toDoValue);
+  persistToDos();
+  dragged.parentNode.removeChild(dragged);
+  dropped.target.querySelector("ul.js-list").appendChild(dragged);
 }
 
 function onSubmit(event) {
   event.preventDefault();
   const value = input.value;
   input.value = "";
-  addToDo(value, "todo");
+  addToDo(null, value, "todo");
 }
 
 function loadToDos() {
@@ -662,7 +693,7 @@ function loadToDos() {
   if (loadedToDos !== null) {
     const parsedToDos = JSON.parse(loadedToDos);
     parsedToDos.forEach(function (toDo) {
-      addToDo(toDo.value, toDo.status);
+      addToDo(toDo.id, toDo.value, toDo.status);
     });
   }
 
@@ -674,7 +705,6 @@ function init() {
 }
 
 form.addEventListener("submit", onSubmit);
-var dragged;
 /* events fired on the draggable target */
 
 document.addEventListener("drag", function (event) {}, false);
@@ -706,19 +736,14 @@ document.addEventListener("dragleave", function (event) {
     event.target.style.opacity = 1;
   }
 }, false);
-document.addEventListener("drop", function (event) {
+document.addEventListener("drop", function (dropped) {
   // prevent default action (open as link for some elements)
-  event.preventDefault();
-  targetBoard = event.target.querySelector(".js-list"); // move dragged elem to the selected drop target
+  dropped.preventDefault(); // move dragged elem to the selected drop target
 
-  if (event.target.className == "todo-section") {
-    event.target.style.opacity = 1;
-    dragged.parentNode.removeChild(dragged);
-    targetBoard.appendChild(dragged);
+  if (dropped.target.className == "todo-section") {
+    dropped.target.style.opacity = 1;
+    moveToDo(dragged, dropped);
   }
-
-  console.log(event.target.id);
-  console.log(event.dataTransfer);
 }, false);
 init();
 
