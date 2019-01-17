@@ -150,15 +150,12 @@ document.addEventListener(
     // highlight potential drop target when the draggable element enters it
     if (dropped.target.className === "todo-section") {
       dropped.target.style.opacity = 0.5;
-      console.log(dropped.target);
     } else if (dropped.target.parentNode.className === "todo-section") {
       dropped.target.parentNode.style.opacity = 0.5;
-      console.log(dropped.target.parentNode.parentNode);
     } else if (
       dropped.target.parentNode.parentNode.className === "todo-section"
     ) {
       dropped.target.parentNode.parentNode.style.opacity = 0.5;
-      console.log(dropped.target.parentNode.parentNode);
     }
   },
   false
