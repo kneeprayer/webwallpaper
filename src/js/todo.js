@@ -1,15 +1,13 @@
-const form = document.querySelector(".todo-form"),
-  input = document.querySelector(".todo-input"),
-  todoList = document.getElementById("todo"),
-  doingList = document.getElementById("doing"),
-  doneList = document.getElementById("done");
+const form = document.querySelector(".todo-form");
+const input = document.querySelector(".todo-input");
+const todoList = document.querySelector("#todo .js-list");
 
 let toDos = [];
-var dragged;
+let dragged;
 
 function persistToDos() {
   const stringToDo = JSON.stringify(toDos);
-  localStorage.setItem("toDos", stringToDo);
+  window.localStorage.setItem("toDos", stringToDo); // eslint-disable-line no-unused-vars
 }
 
 function saveToDo(index, text, status) {
@@ -32,10 +30,6 @@ function handleDelete(event) {
     return toDo.index !== parseInt(toDoIndex);
   });
   persistToDos();
-}
-
-function returnIndex(index) {
-  return toDos.filter(e => parseInt(e.index) === parseInt(index));
 }
 
 function addToDo(index, text, status) {
@@ -61,15 +55,13 @@ function addToDo(index, text, status) {
   toDo.appendChild(label);
   toDo.appendChild(deleteBtn);
   if (status === "todo") todoList.querySelector("ul").appendChild(toDo);
-  if (status === "doing") doingList.querySelector("ul").appendChild(toDo);
-  if (status === "done") doneList.querySelector("ul").appendChild(toDo);
   saveToDo(index, text, status);
 }
 
 function moveToDo(dragged, dropped) {
   if (dropped.querySelector(".js-list") !== null) {
-    var index = 0;
-    var toDoValue = null;
+    let index = 0;
+    let toDoValue = null;
     for (let i = 0; i < toDos.length; i++) {
       if (parseInt(toDos[i].index) === parseInt(dragged.id)) {
         toDoValue = {
@@ -95,14 +87,13 @@ function onSubmit(event) {
 }
 
 function loadToDos() {
-  const loadedToDos = localStorage.getItem("toDos");
+  const loadedToDos = window.localStorage.getItem("toDos"); // eslint-disable-line no-unused-vars
   if (loadedToDos !== null) {
     const parsedToDos = JSON.parse(loadedToDos);
     parsedToDos.forEach(function(toDo) {
       return addToDo(toDo.index, toDo.value, toDo.status);
     });
   }
-  return;
 }
 
 function init() {
@@ -112,7 +103,7 @@ function init() {
 form.addEventListener("submit", onSubmit);
 
 /* events fired on the draggable target */
-document.addEventListener("drag", function(event) {}, false);
+document.addEventListener("drag", function() {}, false);
 
 document.addEventListener(
   "dragstart",
