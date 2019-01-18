@@ -7,7 +7,7 @@ const spinner = document.querySelector(".spinner");
 // eslint-disable-next-line no-unused-vars
 let dragStartX = null;
 let unsplash = null;
-let bgIndex = 0;
+window.localStorage.setItem("bgIndex", "0");
 
 function sleep(waitMsec) {
   const startMsec = new Date();
@@ -89,6 +89,7 @@ function removeBackgroundImage() {
 }
 
 function rotateBackgroundImage() {
+  let bgIndex = Number(window.localStorage.getItem("bgIndex"));
   const savedImage = window.localStorage.getItem("bg");
   const myImageArray = JSON.parse(savedImage).myImages;
   let currentBG = document.getElementById(`bg${bgIndex}`);
@@ -97,13 +98,12 @@ function rotateBackgroundImage() {
   bgIndex++;
   if (bgIndex >= myImageArray.length) {
     bgIndex = 0;
+    window.localStorage.setItem("bgIndex", bgIndex);
   }
-  currentBG = document.getElementById(`bg${bgIndex}`);
-  currentBG.classList.remove("invisible");
-  currentBG.classList.add("visible");
 }
 
 function reverseRotateBackgroundImage() {
+  let bgIndex = Number(window.localStorage.getItem("bgIndex"));
   const savedImage = window.localStorage.getItem("bg");
   const myImageArray = JSON.parse(savedImage).myImages;
   let currentBG = document.getElementById(`bg${bgIndex}`);
@@ -112,10 +112,8 @@ function reverseRotateBackgroundImage() {
   bgIndex--;
   if (bgIndex < 0) {
     bgIndex = myImageArray.length - 1;
+    window.localStorage.setItem("bgIndex", bgIndex);
   }
-  currentBG = document.getElementById(`bg${bgIndex}`);
-  currentBG.classList.remove("invisible");
-  currentBG.classList.add("visible");
 }
 
 function saveBackground(imageUrl, city, country, name) {
