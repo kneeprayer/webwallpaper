@@ -1,6 +1,5 @@
 const form = document.querySelector(".todo-form");
 const input = document.querySelector(".todo-input");
-const todoList = document.querySelector("#todo .js-list");
 
 let toDos = [];
 let dragged;
@@ -54,7 +53,12 @@ function addToDo(index, text, status) {
   label.innerHTML = text;
   toDo.appendChild(label);
   toDo.appendChild(deleteBtn);
-  if (status === "todo") todoList.querySelector("ul").appendChild(toDo);
+  const todoList = document.querySelector("#todo .js-list");
+  const doingList = document.querySelector("#doing  .js-list");
+  const doneList = document.querySelector("#done  .js-list");
+  if (status === "todo") todoList.appendChild(toDo);
+  if (status === "doing") doingList.appendChild(toDo);
+  if (status === "done") doneList.appendChild(toDo);
   saveToDo(index, text, status);
 }
 
@@ -87,7 +91,7 @@ function onSubmit(event) {
 }
 
 function loadToDos() {
-  const loadedToDos = window.localStorage.getItem("toDos"); // eslint-disable-line no-unused-vars
+  const loadedToDos = window.localStorage.getItem("toDos");
   if (loadedToDos !== null) {
     const parsedToDos = JSON.parse(loadedToDos);
     parsedToDos.forEach(function(toDo) {
