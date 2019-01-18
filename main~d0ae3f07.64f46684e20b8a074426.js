@@ -848,8 +848,8 @@ function loadBackground() {
       getBackground();
       sleep(1000);
     } else if (slideBackground.getElementsByClassName("slideBackground__img").length <= 5) {
+      let i = 0;
       parsedImage.forEach(e => {
-        let i = 0;
         const img = document.createElement("div");
         img.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)), url("${e.url}")`;
         img.setAttribute("id", `bg${i}`);
@@ -890,8 +890,9 @@ function rotateBackgroundImage() {
 
   if (bgIndex >= myImageArray.length) {
     bgIndex = 0;
-    window.localStorage.setItem("bgIndex", bgIndex);
   }
+
+  window.localStorage.setItem("bgIndex", bgIndex.toString());
 }
 
 function reverseRotateBackgroundImage() {
@@ -905,8 +906,9 @@ function reverseRotateBackgroundImage() {
 
   if (bgIndex < 0) {
     bgIndex = myImageArray.length - 1;
-    window.localStorage.setItem("bgIndex", bgIndex);
   }
+
+  window.localStorage.setItem("bgIndex", bgIndex.toString());
 }
 
 function saveBackground(imageUrl, city, country, name) {
