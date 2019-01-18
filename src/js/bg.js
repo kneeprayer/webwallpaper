@@ -58,8 +58,8 @@ function loadBackground() {
     } else if (
       slideBackground.getElementsByClassName("slideBackground__img").length <= 5
     ) {
+      let i = 0;
       parsedImage.forEach(e => {
-        let i = 0;
         const img = document.createElement("div");
         img.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)), url("${
           e.url
@@ -90,15 +90,19 @@ function removeBackgroundImage() {
 
 function rotateBackgroundImage() {
   let bgIndex = Number(window.localStorage.getItem("bgIndex"));
+  console.log(typeof bgIndex);
   const savedImage = window.localStorage.getItem("bg");
   const myImageArray = JSON.parse(savedImage).myImages;
   let currentBG = document.getElementById(`bg${bgIndex}`);
+  console.log(currentBG);
   currentBG.classList.remove("visible");
   currentBG.classList.add("invisible");
   bgIndex++;
+  window.localStorage.setItem("bgIndex", bgIndex.toString());
+  console.log(bgIndex);
   if (bgIndex >= myImageArray.length) {
     bgIndex = 0;
-    window.localStorage.setItem("bgIndex", bgIndex);
+    window.localStorage.setItem("bgIndex", bgIndex.toString());
   }
 }
 
@@ -110,9 +114,11 @@ function reverseRotateBackgroundImage() {
   currentBG.classList.remove("visible");
   currentBG.classList.add("invisible");
   bgIndex--;
+  window.localStorage.setItem("bgIndex", bgIndex.toString());
+  console.log(bgIndex);
   if (bgIndex < 0) {
     bgIndex = myImageArray.length - 1;
-    window.localStorage.setItem("bgIndex", bgIndex);
+    window.localStorage.setItem("bgIndex", bgIndex.toString());
   }
 }
 
