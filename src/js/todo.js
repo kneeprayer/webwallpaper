@@ -1,14 +1,12 @@
-const form = document.querySelector(".todo-form"),
-  input = document.querySelector(".todo-input"),
-  todoList = document.querySelector("#todo .js-list"),
-  doingList = document.querySelector("#doing .js-list"),
-  doneList = document.querySelector("#done .js-list");
+const form = document.querySelector(".todo-form");
+const input = document.querySelector(".todo-input");
+const todoList = document.querySelector("#todo .js-list");
 
 let toDos = [];
 
 function persistToDos() {
   const stringToDo = JSON.stringify(toDos);
-  localStorage.setItem("toDos", stringToDo);
+  window.localStorage.setItem("toDos", stringToDo); // eslint-disable-line no-unused-vars
 }
 
 function saveToDo(text, status) {
@@ -48,9 +46,7 @@ function addToDo(text, status) {
   label.innerHTML = text;
   toDo.appendChild(label);
   toDo.appendChild(deleteBtn);
-  if ((status = "todo")) todoList.appendChild(toDo);
-  if ((status = "doing")) todoList.appendChild(doing);
-  if ((status = "done")) todoList.appendChild(done);
+  if (status === "todo") todoList.appendChild(toDo);
   saveToDo(text, status);
 }
 
@@ -62,14 +58,13 @@ function onSubmit(event) {
 }
 
 function loadToDos() {
-  const loadedToDos = localStorage.getItem("toDos");
+  const loadedToDos = window.localStorage.getItem("toDos"); // eslint-disable-line no-unused-vars
   if (loadedToDos !== null) {
     const parsedToDos = JSON.parse(loadedToDos);
     parsedToDos.forEach(function(toDo) {
       addToDo(toDo.value, toDo.status);
     });
   }
-  return;
 }
 
 function init() {
@@ -78,10 +73,10 @@ function init() {
 
 form.addEventListener("submit", onSubmit);
 
-var dragged;
+let dragged;
 
 /* events fired on the draggable target */
-document.addEventListener("drag", function(event) {}, false);
+document.addEventListener("drag", function() {}, false);
 
 document.addEventListener(
   "dragstart",
@@ -117,7 +112,7 @@ document.addEventListener(
   "dragenter",
   function(event) {
     // highlight potential drop target when the draggable element enters it
-    if (event.target.className == "todo-section") {
+    if (event.target.className === "todo-section") {
       event.target.style.opacity = 0.5;
     }
   },
@@ -128,7 +123,7 @@ document.addEventListener(
   "dragleave",
   function(event) {
     // reset background of potential drop target when the draggable element leaves it
-    if (event.target.className == "todo-section") {
+    if (event.target.className === "todo-section") {
       event.target.style.opacity = 1;
     }
   },
@@ -140,9 +135,9 @@ document.addEventListener(
   function(event) {
     // prevent default action (open as link for some elements)
     event.preventDefault();
-    targetBoard = event.target.querySelector(".js-list");
+    let targetBoard = event.target.querySelector(".js-list");
     // move dragged elem to the selected drop target
-    if (event.target.className == "todo-section") {
+    if (event.target.className === "todo-section") {
       event.target.style.opacity = 1;
       dragged.parentNode.removeChild(dragged);
       targetBoard.appendChild(dragged);

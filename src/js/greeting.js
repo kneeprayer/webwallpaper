@@ -13,7 +13,7 @@ function handleSubmit(event) {
   const form = event.target;
   const input = form.querySelector("input");
   const value = input.value;
-  localStorage.setItem("username", value);
+  window.localStorage.setItem("username", value);
   paintName(value);
 }
 
@@ -30,7 +30,7 @@ function paintInput() {
 }
 
 function loadName() {
-  const name = localStorage.getItem("username");
+  const name = window.localStorage.getItem("username");
   if (name === null) {
     paintInput();
   } else {
