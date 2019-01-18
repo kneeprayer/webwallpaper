@@ -96,11 +96,10 @@ function rotateBackgroundImage() {
   currentBG.classList.remove("visible");
   currentBG.classList.add("invisible");
   bgIndex++;
-  window.localStorage.setItem("bgIndex", bgIndex.toString());
   if (bgIndex >= myImageArray.length) {
     bgIndex = 0;
-    window.localStorage.setItem("bgIndex", bgIndex.toString());
   }
+  window.localStorage.setItem("bgIndex", bgIndex.toString());
 }
 
 function reverseRotateBackgroundImage() {
@@ -111,11 +110,10 @@ function reverseRotateBackgroundImage() {
   currentBG.classList.remove("visible");
   currentBG.classList.add("invisible");
   bgIndex--;
-  window.localStorage.setItem("bgIndex", bgIndex.toString());
   if (bgIndex < 0) {
     bgIndex = myImageArray.length - 1;
-    window.localStorage.setItem("bgIndex", bgIndex.toString());
   }
+  window.localStorage.setItem("bgIndex", bgIndex.toString());
 }
 
 function saveBackground(imageUrl, city, country, name) {
