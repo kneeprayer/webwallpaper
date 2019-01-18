@@ -1,21 +1,28 @@
 .clock {
+  position: sticky;
+  vertical-align: baseline;
   text-align: right;
-  position: absolute;
   bottom: 25px;
-  right: 25px;
+  margin-right: 25px; 
   opacity: 1;
+  z-index: 1;
+}
+.clock > p#clock {
+  font-size: 4em;
 }
 
-.clock__text {
-  font-size: 3em;
-}
-
-.clock__hangul {
+p#clock.clock__hangul {
   font-size: 2em;
 }
 
 @media only screen and (max-width: 768px) {
 	.clock {
-		position: static;
+		opacity: 0.5;
 	}
+  .clock > p#clock {
+    font-size: 5em;
+  }
+  p#clock.clock__hangul {
+    font-size: 4em;
+  }
 }

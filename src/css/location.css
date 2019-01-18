@@ -1,11 +1,11 @@
 .location {
-  opacity: 0.7;
+  opacity: 0.5;
   transition: opacity 0.3s ease-in;
   font-style: italic;
   font-size: 12px;
-  position: absolute;
+  position: sticky;
   bottom: 25px;
-  left: 25px;
+  margin-left: 25px;
 }
 
 .location:hover {

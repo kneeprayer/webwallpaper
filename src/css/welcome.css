@@ -1,5 +1,4 @@
 .welcome {
-  position: absolute;
   font-size: 1em;
   top: 25px;
   left: 25px;
@@ -29,15 +28,9 @@
   margin-bottom: 20px;
 }
 
-.welcome .name {
-  margin-bottom: 30px;
-}
-
-
 @media only screen and (max-width: 768px) {
 	.welcome {
 		position: static;
 		width: 100%;
-		margin: 0 0 0 25px;
 	}
 }

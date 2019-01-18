@@ -1,4 +1,4 @@
-const clock = document.querySelector(".js-clock .clock__text");
+const clock = document.getElementById("clock");
 let viewClockMode = JSON.parse(window.localStorage.getItem("clock"));
 
 function getTimeHangul() {

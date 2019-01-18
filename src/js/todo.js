@@ -3,19 +3,20 @@ const input = document.querySelector(".todo-input");
 const todoList = document.querySelector("#todo .js-list");
 
 let toDos = [];
+let dragged;
 
 function persistToDos() {
   const stringToDo = JSON.stringify(toDos);
   window.localStorage.setItem("toDos", stringToDo); // eslint-disable-line no-unused-vars
 }
 
-function saveToDo(text, status) {
-  const toDoObject = {
-    id: toDos.length + 1,
+function saveToDo(index, text, status) {
+  const toDo = {
+    index: index,
     value: text,
     status: status
   };
-  toDos.push(toDoObject);
+  toDos.push(toDo);
   persistToDos();
 }
 
@@ -23,21 +24,28 @@ function handleDelete(event) {
   const target = event.target;
   const li = target.parentElement;
   const ul = li.parentElement;
-  const toDoId = li.id;
+  const toDoIndex = li.id;
   ul.removeChild(li);
   toDos = toDos.filter(function(toDo) {
-    return toDo.id !== parseInt(toDoId);
+    return toDo.index !== parseInt(toDoIndex);
   });
   persistToDos();
 }
 
-function addToDo(text, status) {
+function addToDo(index, text, status) {
   const toDo = document.createElement("li");
   toDo.className = "toDo";
-  toDo.id = toDos.length + 1;
+  if (index === null) {
+    if (toDos.length === 0) {
+      index = 1;
+    } else {
+      index = toDos[toDos.length - 1].index + 1;
+    }
+  }
+  toDo.id = index;
   toDo.setAttribute("draggable", "true");
   toDo.setAttribute("aria-grabbed", "false");
-  toDo.setAttribute("tabindex", "0");
+  toDo.setAttribute("tabindex", index);
   const deleteBtn = document.createElement("span");
   deleteBtn.innerHTML = " ❎ ";
   deleteBtn.className = "toDo__button";
@@ -46,15 +54,36 @@ function addToDo(text, status) {
   label.innerHTML = text;
   toDo.appendChild(label);
   toDo.appendChild(deleteBtn);
-  if (status === "todo") todoList.appendChild(toDo);
-  saveToDo(text, status);
+  if (status === "todo") todoList.querySelector("ul").appendChild(toDo);
+  saveToDo(index, text, status);
+}
+
+function moveToDo(dragged, dropped) {
+  if (dropped.querySelector(".js-list") !== null) {
+    let index = 0;
+    let toDoValue = null;
+    for (let i = 0; i < toDos.length; i++) {
+      if (parseInt(toDos[i].index) === parseInt(dragged.id)) {
+        toDoValue = {
+          index: toDos[i].index,
+          value: dragged.querySelector("label").innerHTML,
+          status: dropped.id
+        };
+        index = i;
+      }
+    }
+    toDos.splice(index, 1, toDoValue);
+    persistToDos();
+    dragged.parentNode.removeChild(dragged);
+    dropped.querySelector("ul.js-list").appendChild(dragged);
+  }
 }
 
 function onSubmit(event) {
   event.preventDefault();
   const value = input.value;
   input.value = "";
-  addToDo(value, "todo");
+  addToDo(null, value, "todo");
 }
 
 function loadToDos() {
@@ -62,7 +91,7 @@ function loadToDos() {
   if (loadedToDos !== null) {
     const parsedToDos = JSON.parse(loadedToDos);
     parsedToDos.forEach(function(toDo) {
-      addToDo(toDo.value, toDo.status);
+      return addToDo(toDo.index, toDo.value, toDo.status);
     });
   }
 }
@@ -72,8 +101,6 @@ function init() {
 }
 
 form.addEventListener("submit", onSubmit);
-
-let dragged;
 
 /* events fired on the draggable target */
 document.addEventListener("drag", function() {}, false);
@@ -110,10 +137,19 @@ document.addEventListener(
 
 document.addEventListener(
   "dragenter",
-  function(event) {
+  function(dropped) {
     // highlight potential drop target when the draggable element enters it
-    if (event.target.className === "todo-section") {
-      event.target.style.opacity = 0.5;
+    if (dropped.target.className === "todo-section") {
+      dropped.target.style.opacity = 0.5;
+      console.log(dropped.target);
+    } else if (dropped.target.parentNode.className === "todo-section") {
+      dropped.target.parentNode.style.opacity = 0.5;
+      console.log(dropped.target.parentNode.parentNode);
+    } else if (
+      dropped.target.parentNode.parentNode.className === "todo-section"
+    ) {
+      dropped.target.parentNode.parentNode.style.opacity = 0.5;
+      console.log(dropped.target.parentNode.parentNode);
     }
   },
   false
@@ -121,10 +157,16 @@ document.addEventListener(
 
 document.addEventListener(
   "dragleave",
-  function(event) {
+  function(dropped) {
     // reset background of potential drop target when the draggable element leaves it
-    if (event.target.className === "todo-section") {
-      event.target.style.opacity = 1;
+    if (dropped.target.className === "todo-section") {
+      dropped.target.style.opacity = 1;
+    } else if (dropped.target.parentNode.className === "todo-section") {
+      dropped.target.parentNode.style.opacity = 1;
+    } else if (
+      dropped.target.parentNode.parentNode.className === "todo-section"
+    ) {
+      dropped.target.parentNode.parentNode.style.opacity = 1;
     }
   },
   false
@@ -132,18 +174,22 @@ document.addEventListener(
 
 document.addEventListener(
   "drop",
-  function(event) {
+  function(dropped) {
     // prevent default action (open as link for some elements)
-    event.preventDefault();
-    let targetBoard = event.target.querySelector(".js-list");
+    dropped.preventDefault();
     // move dragged elem to the selected drop target
-    if (event.target.className === "todo-section") {
-      event.target.style.opacity = 1;
-      dragged.parentNode.removeChild(dragged);
-      targetBoard.appendChild(dragged);
+    if (dropped.target.className === "todo-section") {
+      dropped.target.style.opacity = 1;
+      moveToDo(dragged, dropped.target);
+    } else if (dropped.target.parentNode.className === "todo-section") {
+      dropped.target.parentNode.style.opacity = 1;
+      moveToDo(dragged, dropped.target.parentNode);
+    } else if (
+      dropped.target.parentNode.parentNode.className === "todo-section"
+    ) {
+      dropped.target.parentNode.style.opacity = 1;
+      moveToDo(dragged, dropped.target.parentNode.parentNode);
     }
-    console.log(event.target.id);
-    console.log(event.dataTransfer);
   },
   false
 );
