@@ -82,48 +82,48 @@ module.exports = __webpack_require__(376);
 /***/ 343:
 /***/ (function(module, exports, __webpack_require__) {
 
-const appleIcon57X57 = __webpack_require__(344);
+const appleIcon57 = __webpack_require__(344);
 
-const appleIcon60X60 = __webpack_require__(345);
+const appleIcon60 = __webpack_require__(345);
 
-const appleIcon72X72 = __webpack_require__(126);
+const appleIcon72 = __webpack_require__(126);
 
-const appleIcon76X76 = __webpack_require__(126);
+const appleIcon76 = __webpack_require__(126);
 
-const appleIcon114X114 = __webpack_require__(346);
+const appleIcon114 = __webpack_require__(346);
 
-const appleIcon120X120 = __webpack_require__(347);
+const appleIcon120 = __webpack_require__(347);
 
-const appleIcon144X144 = __webpack_require__(348);
+const appleIcon144 = __webpack_require__(348);
 
-const appleIcon152X152 = __webpack_require__(349);
+const appleIcon152 = __webpack_require__(349);
 
-const appleIcon180X180 = __webpack_require__(350);
+const appleIcon180 = __webpack_require__(350);
 
-const appleIcon192X192 = __webpack_require__(351);
+const appleIcon192 = __webpack_require__(351);
 
-const favicon16X16 = __webpack_require__(352);
+const favicon16 = __webpack_require__(352);
 
-const favicon32X32 = __webpack_require__(353);
+const favicon32 = __webpack_require__(353);
 
-const favicon96X96 = __webpack_require__(354);
+const favicon96 = __webpack_require__(354);
 
 const manifest = __webpack_require__(355);
 
 const innerHtml = `
-    <link rel="apple-touch-icon" sizes="57x57" href="` + appleIcon57X57 + `">
-    <link rel="apple-touch-icon" sizes="60x60" href="` + appleIcon60X60 + `">
-    <link rel="apple-touch-icon" sizes="72x72" href="` + appleIcon72X72 + `">
-    <link rel="apple-touch-icon" sizes="76x76" href="` + appleIcon76X76 + `">
-    <link rel="apple-touch-icon" sizes="114x114" href="` + appleIcon114X114 + `">
-    <link rel="apple-touch-icon" sizes="120x120" href="` + appleIcon120X120 + `">
-    <link rel="apple-touch-icon" sizes="144x144" href="` + appleIcon144X144 + `">
-    <link rel="apple-touch-icon" sizes="152x152" href="` + appleIcon152X152 + `">
-    <link rel="apple-touch-icon" sizes="180x180" href="` + appleIcon180X180 + `">
-    <link rel="icon" type="image/png" sizes="192x192" href="` + appleIcon192X192 + `">
-    <link rel="icon" type="image/png" sizes="16x16" href="` + favicon16X16 + `">
-    <link rel="icon" type="image/png" sizes="32x32" href="` + favicon32X32 + `">
-    <link rel="icon" type="image/png" sizes="96x96" href="` + favicon96X96 + `">
+    <link rel="apple-touch-icon" sizes="57x57" href="` + appleIcon57 + `">
+    <link rel="apple-touch-icon" sizes="60x60" href="` + appleIcon60 + `">
+    <link rel="apple-touch-icon" sizes="72x72" href="` + appleIcon72 + `">
+    <link rel="apple-touch-icon" sizes="76x76" href="` + appleIcon76 + `">
+    <link rel="apple-touch-icon" sizes="114x114" href="` + appleIcon114 + `">
+    <link rel="apple-touch-icon" sizes="120x120" href="` + appleIcon120 + `">
+    <link rel="apple-touch-icon" sizes="144x144" href="` + appleIcon144 + `">
+    <link rel="apple-touch-icon" sizes="152x152" href="` + appleIcon152 + `">
+    <link rel="apple-touch-icon" sizes="180x180" href="` + appleIcon180 + `">
+    <link rel="icon" type="image/png" sizes="192x192" href="` + appleIcon192 + `">
+    <link rel="icon" type="image/png" sizes="16x16" href="` + favicon16 + `">
+    <link rel="icon" type="image/png" sizes="32x32" href="` + favicon32 + `">
+    <link rel="icon" type="image/png" sizes="96x96" href="` + favicon96 + `">
     <link rel="manifest" href="` + manifest + `">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="manifest">
@@ -582,7 +582,6 @@ init();
 
 const form = document.querySelector(".todo-form");
 const input = document.querySelector(".todo-input");
-const todoList = document.querySelector("#todo .js-list");
 let toDos = [];
 let dragged;
 
@@ -637,7 +636,12 @@ function addToDo(index, text, status) {
   label.innerHTML = text;
   toDo.appendChild(label);
   toDo.appendChild(deleteBtn);
-  if (status === "todo") todoList.querySelector("ul").appendChild(toDo);
+  const todoList = document.querySelector("#todo .js-list");
+  const doingList = document.querySelector("#doing  .js-list");
+  const doneList = document.querySelector("#done  .js-list");
+  if (status === "todo") todoList.appendChild(toDo);
+  if (status === "doing") doingList.appendChild(toDo);
+  if (status === "done") doneList.appendChild(toDo);
   saveToDo(index, text, status);
 }
 
@@ -672,7 +676,7 @@ function onSubmit(event) {
 }
 
 function loadToDos() {
-  const loadedToDos = window.localStorage.getItem("toDos"); // eslint-disable-line no-unused-vars
+  const loadedToDos = window.localStorage.getItem("toDos");
 
   if (loadedToDos !== null) {
     const parsedToDos = JSON.parse(loadedToDos);
@@ -798,7 +802,7 @@ const spinner = document.querySelector(".spinner"); // eslint-disable-next-line 
 
 let dragStartX = null;
 let bg_unsplash = null;
-let bgIndex = 0;
+window.localStorage.setItem("bgIndex", "0");
 
 function sleep(waitMsec) {
   const startMsec = new Date();
@@ -876,6 +880,7 @@ function removeBackgroundImage() {
 }
 
 function rotateBackgroundImage() {
+  let bgIndex = Number(window.localStorage.getItem("bgIndex"));
   const savedImage = window.localStorage.getItem("bg");
   const myImageArray = JSON.parse(savedImage).myImages;
   let currentBG = document.getElementById(`bg${bgIndex}`);
@@ -885,14 +890,12 @@ function rotateBackgroundImage() {
 
   if (bgIndex >= myImageArray.length) {
     bgIndex = 0;
+    window.localStorage.setItem("bgIndex", bgIndex);
   }
-
-  currentBG = document.getElementById(`bg${bgIndex}`);
-  currentBG.classList.remove("invisible");
-  currentBG.classList.add("visible");
 }
 
 function reverseRotateBackgroundImage() {
+  let bgIndex = Number(window.localStorage.getItem("bgIndex"));
   const savedImage = window.localStorage.getItem("bg");
   const myImageArray = JSON.parse(savedImage).myImages;
   let currentBG = document.getElementById(`bg${bgIndex}`);
@@ -902,11 +905,8 @@ function reverseRotateBackgroundImage() {
 
   if (bgIndex < 0) {
     bgIndex = myImageArray.length - 1;
+    window.localStorage.setItem("bgIndex", bgIndex);
   }
-
-  currentBG = document.getElementById(`bg${bgIndex}`);
-  currentBG.classList.remove("invisible");
-  currentBG.classList.add("visible");
 }
 
 function saveBackground(imageUrl, city, country, name) {
