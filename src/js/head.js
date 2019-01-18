@@ -1,59 +1,58 @@
-const apple_icon_57_57 = require("../html/apple-icon-57x57.png");
-const apple_icon_60_60 = require("../html/apple-icon-60x60.png");
-const apple_icon_72_72 = require("../html/apple-icon-72x72.png");
-const apple_icon_76_76 = require("../html/apple-icon-72x72.png");
-const apple_icon_114_114 = require("../html/apple-icon-114x114.png");
-const apple_icon_120_120 = require("../html/apple-icon-120x120.png");
-const apple_icon_144_144 = require("../html/apple-icon-144x144.png");
-const apple_icon_152_152 = require("../html/apple-icon-152x152.png");
-const apple_icon_180_180 = require("../html/apple-icon-180x180.png");
-const apple_icon_192_192 = require("../html/android-icon-192x192.png");
-const favicon_16_16 = require("../html/favicon-16x16.png");
-const favicon_32_32 = require("../html/favicon-32x32.png");
-const favicon_96_96 = require("../html/favicon-96x96.png");
-const ms_icon_144_144 = require("../html/ms-icon-144x144.png");
+const appleIcon57X57 = require("../html/apple-icon-57x57.png");
+const appleIcon60X60 = require("../html/apple-icon-60x60.png");
+const appleIcon72X72 = require("../html/apple-icon-72x72.png");
+const appleIcon76X76 = require("../html/apple-icon-72x72.png");
+const appleIcon114X114 = require("../html/apple-icon-114x114.png");
+const appleIcon120X120 = require("../html/apple-icon-120x120.png");
+const appleIcon144X144 = require("../html/apple-icon-144x144.png");
+const appleIcon152X152 = require("../html/apple-icon-152x152.png");
+const appleIcon180X180 = require("../html/apple-icon-180x180.png");
+const appleIcon192X192 = require("../html/android-icon-192x192.png");
+const favicon16X16 = require("../html/favicon-16x16.png");
+const favicon32X32 = require("../html/favicon-32x32.png");
+const favicon96X96 = require("../html/favicon-96x96.png");
 const manifest = require("../html/manifest.json");
 
-var innerHtml =
+const innerHtml =
   `
     <link rel="apple-touch-icon" sizes="57x57" href="` +
-  apple_icon_57_57 +
+  appleIcon57X57 +
   `">
     <link rel="apple-touch-icon" sizes="60x60" href="` +
-  apple_icon_60_60 +
+  appleIcon60X60 +
   `">
     <link rel="apple-touch-icon" sizes="72x72" href="` +
-  apple_icon_72_72 +
+  appleIcon72X72 +
   `">
     <link rel="apple-touch-icon" sizes="76x76" href="` +
-  apple_icon_76_76 +
+  appleIcon76X76 +
   `">
     <link rel="apple-touch-icon" sizes="114x114" href="` +
-  apple_icon_114_114 +
+  appleIcon114X114 +
   `">
     <link rel="apple-touch-icon" sizes="120x120" href="` +
-  apple_icon_120_120 +
+  appleIcon120X120 +
   `">
     <link rel="apple-touch-icon" sizes="144x144" href="` +
-  apple_icon_144_144 +
+  appleIcon144X144 +
   `">
     <link rel="apple-touch-icon" sizes="152x152" href="` +
-  apple_icon_152_152 +
+  appleIcon152X152 +
   `">
     <link rel="apple-touch-icon" sizes="180x180" href="` +
-  apple_icon_180_180 +
+  appleIcon180X180 +
   `">
     <link rel="icon" type="image/png" sizes="192x192" href="` +
-  apple_icon_192_192 +
+  appleIcon192X192 +
   `">
     <link rel="icon" type="image/png" sizes="16x16" href="` +
-  favicon_16_16 +
+  favicon16X16 +
   `">
     <link rel="icon" type="image/png" sizes="32x32" href="` +
-  favicon_32_32 +
+  favicon32X32 +
   `">
     <link rel="icon" type="image/png" sizes="96x96" href="` +
-  favicon_96_96 +
+  favicon96X96 +
   `">
     <link rel="manifest" href="` +
   manifest +

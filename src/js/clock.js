@@ -1,7 +1,7 @@
 const clock = document.getElementById("clock");
-var viewClockMode = JSON.parse(window.localStorage.getItem("clock"));
+let viewClockMode = JSON.parse(window.localStorage.getItem("clock"));
 
-function getTimeHangul(hours, minutes, seconds) {
+function getTimeHangul() {
   const now = new Date();
   let time;
   switch (parseInt(now.getHours() / 12)) {
@@ -106,7 +106,7 @@ function getTimeHangul(hours, minutes, seconds) {
       time += " 구";
   }
 
-  if (now.getMinutes() != 0) {
+  if (now.getMinutes() !== 0) {
     time += " 분<br>";
   } else {
     time += "<br>";
@@ -161,13 +161,12 @@ function getTimeHangul(hours, minutes, seconds) {
       time += " 구";
   }
 
-  if (now.getSeconds() != 0) {
+  if (now.getSeconds() !== 0) {
     time += " 초<br>";
   } else {
     time += "<br>";
   }
   clock.innerHTML = time;
-  return;
 }
 
 function getTimeNumber() {
@@ -175,13 +174,11 @@ function getTimeNumber() {
   const hours = now.getHours();
   const minutes = now.getMinutes();
   const seconds = now.getSeconds();
-  const time = `
+  clock.innerHTML = `
     ${hours < 10 ? `0${hours}` : hours}:${
     minutes < 10 ? `0${minutes}` : minutes
   }:${seconds < 10 ? `0${seconds}` : seconds}
   `;
-  clock.innerHTML = time;
-  return;
 }
 
 function getTime() {
@@ -191,7 +188,7 @@ function getTime() {
     window.localStorage.setItem("clock", JSON.stringify(viewClockMode));
   }
 
-  if (viewClockMode == "Number") {
+  if (viewClockMode === "Number") {
     clock.classList.remove("clock__hangul");
     getTimeNumber();
   } else {
@@ -201,7 +198,7 @@ function getTime() {
 }
 
 function toggleClock() {
-  if (viewClockMode == "Number") {
+  if (viewClockMode === "Number") {
     viewClockMode = "Hangul";
     clock.classList.add("clock__hangul");
   } else {
@@ -215,7 +212,6 @@ function toggleClock() {
 function init() {
   getTime();
   setInterval(getTime, 1000);
-  return;
 }
 
 clock.addEventListener("click", toggleClock);

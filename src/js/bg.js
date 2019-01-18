@@ -7,15 +7,15 @@ const spinner = document.querySelector(".spinner");
 // eslint-disable-next-line no-unused-vars
 let dragStartX = null;
 let unsplash = null;
-var bgIndex = 0;
+let bgIndex = 0;
 
 function sleep(waitMsec) {
-  var startMsec = new Date();
+  const startMsec = new Date();
   while (new Date() - startMsec < waitMsec);
 }
 
 function initUnsplash() {
-  var savedUnsplash = window.localStorage.getItem("unsplashInfo");
+  let savedUnsplash = window.localStorage.getItem("unsplashInfo");
   if (savedUnsplash === null) {
     window.localStorage.setItem(
       "unsplashInfo",
@@ -31,7 +31,7 @@ function initUnsplash() {
     );
     savedUnsplash = window.localStorage.getItem("unsplashInfo");
   }
-  var parsedUnsplash = JSON.parse(savedUnsplash).unsplash;
+  const parsedUnsplash = JSON.parse(savedUnsplash).unsplash;
   unsplash = new Unsplash({
     applicationId: parsedUnsplash.applicationId,
     secret: parsedUnsplash.secret,
@@ -44,8 +44,8 @@ function loadBackground() {
   if (savedImage === null) {
     getBackground();
   } else {
-    var parsedImage = JSON.parse(savedImage).myImages;
-    var today = new Date();
+    const parsedImage = JSON.parse(savedImage).myImages;
+    const today = new Date();
     if (
       typeof parsedImage !== "undefined" &&
       today > new Date(parsedImage[0].expiresOn)
@@ -58,15 +58,15 @@ function loadBackground() {
     } else if (
       slideBackground.getElementsByClassName("slideBackground__img").length <= 5
     ) {
-      var i = 0;
       parsedImage.forEach(e => {
-        var img = document.createElement("div");
+        let i = 0;
+        const img = document.createElement("div");
         img.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)), url("${
           e.url
         }")`;
         img.setAttribute("id", `bg${i}`);
         img.classList.add("slideBackground__img");
-        if (i == 0) {
+        if (i === 0) {
           img.classList.add("visible");
         } else {
           img.classList.add("invisible");
@@ -82,16 +82,16 @@ function loadBackground() {
 }
 
 function removeBackgroundImage() {
-  var savedImage = window.localStorage.getItem("bg");
-  var myImageArray = JSON.parse(savedImage).myImages;
+  const savedImage = window.localStorage.getItem("bg");
+  const myImageArray = JSON.parse(savedImage).myImages;
   myImageArray.shift();
   window.localStorage.setItem("bg", JSON.stringify({ myImages: myImageArray }));
 }
 
 function rotateBackgroundImage() {
-  var savedImage = window.localStorage.getItem("bg");
-  var myImageArray = JSON.parse(savedImage).myImages;
-  var currentBG = document.getElementById(`bg${bgIndex}`);
+  const savedImage = window.localStorage.getItem("bg");
+  const myImageArray = JSON.parse(savedImage).myImages;
+  let currentBG = document.getElementById(`bg${bgIndex}`);
   currentBG.classList.remove("visible");
   currentBG.classList.add("invisible");
   bgIndex++;
@@ -104,9 +104,9 @@ function rotateBackgroundImage() {
 }
 
 function reverseRotateBackgroundImage() {
-  var savedImage = window.localStorage.getItem("bg");
-  var myImageArray = JSON.parse(savedImage).myImages;
-  var currentBG = document.getElementById(`bg${bgIndex}`);
+  const savedImage = window.localStorage.getItem("bg");
+  const myImageArray = JSON.parse(savedImage).myImages;
+  let currentBG = document.getElementById(`bg${bgIndex}`);
   currentBG.classList.remove("visible");
   currentBG.classList.add("invisible");
   bgIndex--;
@@ -119,11 +119,11 @@ function reverseRotateBackgroundImage() {
 }
 
 function saveBackground(imageUrl, city, country, name) {
-  var savedImage = window.localStorage.getItem("bg");
-  var expirationDate = new Date();
+  const savedImage = window.localStorage.getItem("bg");
+  const expirationDate = new Date();
   expirationDate.setHours(expirationDate.getHours() + 8);
-  var myImageArray;
-  var parsedImage;
+  let myImageArray;
+  let parsedImage;
   if (savedImage == null) {
     myImageArray = [];
   } else {
@@ -192,7 +192,7 @@ slideBackground.addEventListener(
 slideBackground.addEventListener(
   "dragend",
   function(event) {
-    var dragEndX = event.screenX;
+    const dragEndX = event.screenX;
     console.log("start : dragStartX");
     console.log(dragEndX);
   },
