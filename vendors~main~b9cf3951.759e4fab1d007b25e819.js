@@ -34,11 +34,11 @@ exports.buildFetchOptions = buildFetchOptions;
 
 var _querystring = __webpack_require__(129);
 
-var _formUrlencoded = __webpack_require__(360);
+var _formUrlencoded = __webpack_require__(359);
 
 var _formUrlencoded2 = _interopRequireDefault(_formUrlencoded);
 
-var _urlParse = __webpack_require__(361);
+var _urlParse = __webpack_require__(360);
 
 var _urlParse2 = _interopRequireDefault(_urlParse);
 
@@ -90,8 +90,8 @@ function buildFetchOptions(options) {
 "use strict";
 
 
-exports.decode = exports.parse = __webpack_require__(358);
-exports.encode = exports.stringify = __webpack_require__(359);
+exports.decode = exports.parse = __webpack_require__(357);
+exports.encode = exports.stringify = __webpack_require__(358);
 
 
 /***/ }),
@@ -840,7 +840,7 @@ exports.encode = exports.stringify = __webpack_require__(359);
 
 /***/ }),
 
-/***/ 358:
+/***/ 357:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -932,7 +932,7 @@ var isArray = Array.isArray || function (xs) {
 
 /***/ }),
 
-/***/ 359:
+/***/ 358:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1025,14 +1025,14 @@ var objectKeys = Object.keys || function (obj) {
 
 /***/ }),
 
-/***/ 361:
+/***/ 360:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(global) {
 
-var required = __webpack_require__(362)
-  , qs = __webpack_require__(363)
+var required = __webpack_require__(361)
+  , qs = __webpack_require__(362)
   , protocolre = /^([a-z][a-z0-9.+-]*:)?(\/\/)?([\S\s]*)/i
   , slashes = /^[A-Za-z][A-Za-z0-9+-.]*:\/\//;
 
@@ -1446,7 +1446,7 @@ module.exports = URL;
 
 /***/ }),
 
-/***/ 362:
+/***/ 361:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1492,7 +1492,7 @@ module.exports = function required(port, protocol) {
 
 /***/ }),
 
-/***/ 363:
+/***/ 362:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1572,7 +1572,7 @@ exports.parse = querystring;
 
 /***/ }),
 
-/***/ 364:
+/***/ 363:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1635,7 +1635,7 @@ function auth() {
 
 /***/ }),
 
-/***/ 365:
+/***/ 364:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1697,7 +1697,7 @@ function currentUser() {
 
 /***/ }),
 
-/***/ 366:
+/***/ 365:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1800,7 +1800,7 @@ function users() {
 
 /***/ }),
 
-/***/ 367:
+/***/ 366:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1813,7 +1813,7 @@ exports.default = photos;
 
 var _utils = __webpack_require__(128);
 
-var _lodash = __webpack_require__(368);
+var _lodash = __webpack_require__(367);
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
@@ -2000,7 +2000,7 @@ function photos() {
 
 /***/ }),
 
-/***/ 369:
+/***/ 368:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2051,7 +2051,7 @@ function categories() {
 
 /***/ }),
 
-/***/ 370:
+/***/ 369:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2217,7 +2217,7 @@ function createUpdateCollection(id, title, description, isPrivate) {
 
 /***/ }),
 
-/***/ 371:
+/***/ 370:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2259,7 +2259,7 @@ function searcher(url) {
 
 /***/ }),
 
-/***/ 372:
+/***/ 371:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2286,7 +2286,7 @@ function stats() {
 
 /***/ }),
 
-/***/ 374:
+/***/ 373:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2861,35 +2861,35 @@ var _constants = __webpack_require__(127);
 
 var _utils = __webpack_require__(128);
 
-var _auth = __webpack_require__(364);
+var _auth = __webpack_require__(363);
 
 var _auth2 = _interopRequireDefault(_auth);
 
-var _currentUser = __webpack_require__(365);
+var _currentUser = __webpack_require__(364);
 
 var _currentUser2 = _interopRequireDefault(_currentUser);
 
-var _users = __webpack_require__(366);
+var _users = __webpack_require__(365);
 
 var _users2 = _interopRequireDefault(_users);
 
-var _photos = __webpack_require__(367);
+var _photos = __webpack_require__(366);
 
 var _photos2 = _interopRequireDefault(_photos);
 
-var _categories = __webpack_require__(369);
+var _categories = __webpack_require__(368);
 
 var _categories2 = _interopRequireDefault(_categories);
 
-var _collections = __webpack_require__(370);
+var _collections = __webpack_require__(369);
 
 var _collections2 = _interopRequireDefault(_collections);
 
-var _search = __webpack_require__(371);
+var _search = __webpack_require__(370);
 
 var _search2 = _interopRequireDefault(_search);
 
-var _stats = __webpack_require__(372);
+var _stats = __webpack_require__(371);
 
 var _stats2 = _interopRequireDefault(_stats);
 

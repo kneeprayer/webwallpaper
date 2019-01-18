@@ -11,7 +11,7 @@ module.exports = __webpack_require__.p + "602ea1a448fe2bc93709ef9c78da9e55.png";
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(132);
-module.exports = __webpack_require__(377);
+module.exports = __webpack_require__(376);
 
 
 /***/ }),
@@ -82,50 +82,48 @@ module.exports = __webpack_require__(377);
 /***/ 343:
 /***/ (function(module, exports, __webpack_require__) {
 
-const apple_icon_57_57 = __webpack_require__(344);
+const appleIcon57X57 = __webpack_require__(344);
 
-const apple_icon_60_60 = __webpack_require__(345);
+const appleIcon60X60 = __webpack_require__(345);
 
-const apple_icon_72_72 = __webpack_require__(126);
+const appleIcon72X72 = __webpack_require__(126);
 
-const apple_icon_76_76 = __webpack_require__(126);
+const appleIcon76X76 = __webpack_require__(126);
 
-const apple_icon_114_114 = __webpack_require__(346);
+const appleIcon114X114 = __webpack_require__(346);
 
-const apple_icon_120_120 = __webpack_require__(347);
+const appleIcon120X120 = __webpack_require__(347);
 
-const apple_icon_144_144 = __webpack_require__(348);
+const appleIcon144X144 = __webpack_require__(348);
 
-const apple_icon_152_152 = __webpack_require__(349);
+const appleIcon152X152 = __webpack_require__(349);
 
-const apple_icon_180_180 = __webpack_require__(350);
+const appleIcon180X180 = __webpack_require__(350);
 
-const apple_icon_192_192 = __webpack_require__(351);
+const appleIcon192X192 = __webpack_require__(351);
 
-const favicon_16_16 = __webpack_require__(352);
+const favicon16X16 = __webpack_require__(352);
 
-const favicon_32_32 = __webpack_require__(353);
+const favicon32X32 = __webpack_require__(353);
 
-const favicon_96_96 = __webpack_require__(354);
+const favicon96X96 = __webpack_require__(354);
 
-const ms_icon_144_144 = __webpack_require__(355);
+const manifest = __webpack_require__(355);
 
-const manifest = __webpack_require__(356);
-
-var innerHtml = `
-    <link rel="apple-touch-icon" sizes="57x57" href="` + apple_icon_57_57 + `">
-    <link rel="apple-touch-icon" sizes="60x60" href="` + apple_icon_60_60 + `">
-    <link rel="apple-touch-icon" sizes="72x72" href="` + apple_icon_72_72 + `">
-    <link rel="apple-touch-icon" sizes="76x76" href="` + apple_icon_76_76 + `">
-    <link rel="apple-touch-icon" sizes="114x114" href="` + apple_icon_114_114 + `">
-    <link rel="apple-touch-icon" sizes="120x120" href="` + apple_icon_120_120 + `">
-    <link rel="apple-touch-icon" sizes="144x144" href="` + apple_icon_144_144 + `">
-    <link rel="apple-touch-icon" sizes="152x152" href="` + apple_icon_152_152 + `">
-    <link rel="apple-touch-icon" sizes="180x180" href="` + apple_icon_180_180 + `">
-    <link rel="icon" type="image/png" sizes="192x192" href="` + apple_icon_192_192 + `">
-    <link rel="icon" type="image/png" sizes="16x16" href="` + favicon_16_16 + `">
-    <link rel="icon" type="image/png" sizes="32x32" href="` + favicon_32_32 + `">
-    <link rel="icon" type="image/png" sizes="96x96" href="` + favicon_96_96 + `">
+const innerHtml = `
+    <link rel="apple-touch-icon" sizes="57x57" href="` + appleIcon57X57 + `">
+    <link rel="apple-touch-icon" sizes="60x60" href="` + appleIcon60X60 + `">
+    <link rel="apple-touch-icon" sizes="72x72" href="` + appleIcon72X72 + `">
+    <link rel="apple-touch-icon" sizes="76x76" href="` + appleIcon76X76 + `">
+    <link rel="apple-touch-icon" sizes="114x114" href="` + appleIcon114X114 + `">
+    <link rel="apple-touch-icon" sizes="120x120" href="` + appleIcon120X120 + `">
+    <link rel="apple-touch-icon" sizes="144x144" href="` + appleIcon144X144 + `">
+    <link rel="apple-touch-icon" sizes="152x152" href="` + appleIcon152X152 + `">
+    <link rel="apple-touch-icon" sizes="180x180" href="` + appleIcon180X180 + `">
+    <link rel="icon" type="image/png" sizes="192x192" href="` + appleIcon192X192 + `">
+    <link rel="icon" type="image/png" sizes="16x16" href="` + favicon16X16 + `">
+    <link rel="icon" type="image/png" sizes="32x32" href="` + favicon32X32 + `">
+    <link rel="icon" type="image/png" sizes="96x96" href="` + favicon96X96 + `">
     <link rel="manifest" href="` + manifest + `">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="manifest">
@@ -213,20 +211,13 @@ module.exports = __webpack_require__.p + "7cb90db60464f38ddee0c80905a9e480.png";
 /***/ }),
 
 /***/ 355:
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "1f769998eb7dbcdfbee3f972eb50f3f7.png";
-
-/***/ }),
-
-/***/ 356:
 /***/ (function(module) {
 
 module.exports = {"name":"App","icons":[{"src":"/android-icon-36x36.png","sizes":"36x36","type":"image/png","density":"0.75"},{"src":"/android-icon-48x48.png","sizes":"48x48","type":"image/png","density":"1.0"},{"src":"/android-icon-72x72.png","sizes":"72x72","type":"image/png","density":"1.5"},{"src":"/android-icon-96x96.png","sizes":"96x96","type":"image/png","density":"2.0"},{"src":"/android-icon-144x144.png","sizes":"144x144","type":"image/png","density":"3.0"},{"src":"/android-icon-192x192.png","sizes":"192x192","type":"image/png","density":"4.0"}]};
 
 /***/ }),
 
-/***/ 357:
+/***/ 356:
 /***/ (function(module, exports) {
 
 document.getElementById("app").innerHTML = `
@@ -270,13 +261,13 @@ document.getElementById("app").innerHTML = `
 
 /***/ }),
 
-/***/ 373:
+/***/ 372:
 /***/ (function(module, exports) {
 
 const clock = document.getElementById("clock");
-var viewClockMode = JSON.parse(window.localStorage.getItem("clock"));
+let viewClockMode = JSON.parse(window.localStorage.getItem("clock"));
 
-function getTimeHangul(hours, minutes, seconds) {
+function getTimeHangul() {
   const now = new Date();
   let time;
 
@@ -408,7 +399,7 @@ function getTimeHangul(hours, minutes, seconds) {
       time += " 구";
   }
 
-  if (now.getMinutes() != 0) {
+  if (now.getMinutes() !== 0) {
     time += " 분<br>";
   } else {
     time += "<br>";
@@ -476,14 +467,13 @@ function getTimeHangul(hours, minutes, seconds) {
       time += " 구";
   }
 
-  if (now.getSeconds() != 0) {
+  if (now.getSeconds() !== 0) {
     time += " 초<br>";
   } else {
     time += "<br>";
   }
 
   clock.innerHTML = time;
-  return;
 }
 
 function getTimeNumber() {
@@ -491,11 +481,9 @@ function getTimeNumber() {
   const hours = now.getHours();
   const minutes = now.getMinutes();
   const seconds = now.getSeconds();
-  const time = `
+  clock.innerHTML = `
     ${hours < 10 ? `0${hours}` : hours}:${minutes < 10 ? `0${minutes}` : minutes}:${seconds < 10 ? `0${seconds}` : seconds}
   `;
-  clock.innerHTML = time;
-  return;
 }
 
 function getTime() {
@@ -505,7 +493,7 @@ function getTime() {
     window.localStorage.setItem("clock", JSON.stringify(viewClockMode));
   }
 
-  if (viewClockMode == "Number") {
+  if (viewClockMode === "Number") {
     clock.classList.remove("clock__hangul");
     getTimeNumber();
   } else {
@@ -515,7 +503,7 @@ function getTime() {
 }
 
 function toggleClock() {
-  if (viewClockMode == "Number") {
+  if (viewClockMode === "Number") {
     viewClockMode = "Hangul";
     clock.classList.add("clock__hangul");
   } else {
@@ -530,7 +518,6 @@ function toggleClock() {
 function init() {
   getTime();
   setInterval(getTime, 1000);
-  return;
 }
 
 clock.addEventListener("click", toggleClock);
@@ -538,7 +525,7 @@ init();
 
 /***/ }),
 
-/***/ 375:
+/***/ 374:
 /***/ (function(module, exports) {
 
 const nameContainer = document.querySelector(".js-name");
@@ -556,7 +543,7 @@ function handleSubmit(event) {
   const form = event.target;
   const input = form.querySelector("input");
   const value = input.value;
-  localStorage.setItem("username", value);
+  window.localStorage.setItem("username", value);
   paintName(value);
 }
 
@@ -573,7 +560,7 @@ function paintInput() {
 }
 
 function loadName() {
-  const name = localStorage.getItem("username");
+  const name = window.localStorage.getItem("username");
 
   if (name === null) {
     paintInput();
@@ -590,20 +577,18 @@ init();
 
 /***/ }),
 
-/***/ 376:
+/***/ 375:
 /***/ (function(module, exports) {
 
-const form = document.querySelector(".todo-form"),
-      input = document.querySelector(".todo-input"),
-      todoList = document.getElementById("todo"),
-      doingList = document.getElementById("doing"),
-      doneList = document.getElementById("done");
+const form = document.querySelector(".todo-form");
+const input = document.querySelector(".todo-input");
+const todoList = document.querySelector("#todo .js-list");
 let toDos = [];
-var dragged;
+let dragged;
 
 function persistToDos() {
   const stringToDo = JSON.stringify(toDos);
-  localStorage.setItem("toDos", stringToDo);
+  window.localStorage.setItem("toDos", stringToDo); // eslint-disable-line no-unused-vars
 }
 
 function saveToDo(index, text, status) {
@@ -626,10 +611,6 @@ function handleDelete(event) {
     return toDo.index !== parseInt(toDoIndex);
   });
   persistToDos();
-}
-
-function returnIndex(index) {
-  return toDos.filter(e => parseInt(e.index) === parseInt(index));
 }
 
 function addToDo(index, text, status) {
@@ -657,15 +638,13 @@ function addToDo(index, text, status) {
   toDo.appendChild(label);
   toDo.appendChild(deleteBtn);
   if (status === "todo") todoList.querySelector("ul").appendChild(toDo);
-  if (status === "doing") doingList.querySelector("ul").appendChild(toDo);
-  if (status === "done") doneList.querySelector("ul").appendChild(toDo);
   saveToDo(index, text, status);
 }
 
 function moveToDo(dragged, dropped) {
   if (dropped.querySelector(".js-list") !== null) {
-    var index = 0;
-    var toDoValue = null;
+    let index = 0;
+    let toDoValue = null;
 
     for (let i = 0; i < toDos.length; i++) {
       if (parseInt(toDos[i].index) === parseInt(dragged.id)) {
@@ -693,7 +672,7 @@ function onSubmit(event) {
 }
 
 function loadToDos() {
-  const loadedToDos = localStorage.getItem("toDos");
+  const loadedToDos = window.localStorage.getItem("toDos"); // eslint-disable-line no-unused-vars
 
   if (loadedToDos !== null) {
     const parsedToDos = JSON.parse(loadedToDos);
@@ -701,8 +680,6 @@ function loadToDos() {
       return addToDo(toDo.index, toDo.value, toDo.status);
     });
   }
-
-  return;
 }
 
 function init() {
@@ -712,7 +689,7 @@ function init() {
 form.addEventListener("submit", onSubmit);
 /* events fired on the draggable target */
 
-document.addEventListener("drag", function (event) {}, false);
+document.addEventListener("drag", function () {}, false);
 document.addEventListener("dragstart", function (event) {
   // store a ref. on the dragged elem
   dragged = event.target; // make it half transparent
@@ -768,7 +745,7 @@ init();
 
 /***/ }),
 
-/***/ 377:
+/***/ 376:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -805,7 +782,7 @@ var slide = __webpack_require__(342);
 var head = __webpack_require__(343);
 
 // EXTERNAL MODULE: ./src/js/body.js
-var body = __webpack_require__(357);
+var body = __webpack_require__(356);
 
 // EXTERNAL MODULE: ./node_modules/unsplash-js/lib/unsplash.js
 var unsplash = __webpack_require__(91);
@@ -821,16 +798,16 @@ const spinner = document.querySelector(".spinner"); // eslint-disable-next-line 
 
 let dragStartX = null;
 let bg_unsplash = null;
-var bgIndex = 0;
+let bgIndex = 0;
 
 function sleep(waitMsec) {
-  var startMsec = new Date();
+  const startMsec = new Date();
 
   while (new Date() - startMsec < waitMsec);
 }
 
 function initUnsplash() {
-  var savedUnsplash = window.localStorage.getItem("unsplashInfo");
+  let savedUnsplash = window.localStorage.getItem("unsplashInfo");
 
   if (savedUnsplash === null) {
     window.localStorage.setItem("unsplashInfo", JSON.stringify({
@@ -843,7 +820,7 @@ function initUnsplash() {
     savedUnsplash = window.localStorage.getItem("unsplashInfo");
   }
 
-  var parsedUnsplash = JSON.parse(savedUnsplash).unsplash;
+  const parsedUnsplash = JSON.parse(savedUnsplash).unsplash;
   bg_unsplash = new unsplash_default.a({
     applicationId: parsedUnsplash.applicationId,
     secret: parsedUnsplash.secret,
@@ -857,8 +834,8 @@ function loadBackground() {
   if (savedImage === null) {
     getBackground();
   } else {
-    var parsedImage = JSON.parse(savedImage).myImages;
-    var today = new Date();
+    const parsedImage = JSON.parse(savedImage).myImages;
+    const today = new Date();
 
     if (typeof parsedImage !== "undefined" && today > new Date(parsedImage[0].expiresOn)) {
       removeBackgroundImage();
@@ -867,14 +844,14 @@ function loadBackground() {
       getBackground();
       sleep(1000);
     } else if (slideBackground.getElementsByClassName("slideBackground__img").length <= 5) {
-      var i = 0;
       parsedImage.forEach(e => {
-        var img = document.createElement("div");
+        let i = 0;
+        const img = document.createElement("div");
         img.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)), url("${e.url}")`;
         img.setAttribute("id", `bg${i}`);
         img.classList.add("slideBackground__img");
 
-        if (i == 0) {
+        if (i === 0) {
           img.classList.add("visible");
         } else {
           img.classList.add("invisible");
@@ -890,8 +867,8 @@ function loadBackground() {
 }
 
 function removeBackgroundImage() {
-  var savedImage = window.localStorage.getItem("bg");
-  var myImageArray = JSON.parse(savedImage).myImages;
+  const savedImage = window.localStorage.getItem("bg");
+  const myImageArray = JSON.parse(savedImage).myImages;
   myImageArray.shift();
   window.localStorage.setItem("bg", JSON.stringify({
     myImages: myImageArray
@@ -899,9 +876,9 @@ function removeBackgroundImage() {
 }
 
 function rotateBackgroundImage() {
-  var savedImage = window.localStorage.getItem("bg");
-  var myImageArray = JSON.parse(savedImage).myImages;
-  var currentBG = document.getElementById(`bg${bgIndex}`);
+  const savedImage = window.localStorage.getItem("bg");
+  const myImageArray = JSON.parse(savedImage).myImages;
+  let currentBG = document.getElementById(`bg${bgIndex}`);
   currentBG.classList.remove("visible");
   currentBG.classList.add("invisible");
   bgIndex++;
@@ -916,9 +893,9 @@ function rotateBackgroundImage() {
 }
 
 function reverseRotateBackgroundImage() {
-  var savedImage = window.localStorage.getItem("bg");
-  var myImageArray = JSON.parse(savedImage).myImages;
-  var currentBG = document.getElementById(`bg${bgIndex}`);
+  const savedImage = window.localStorage.getItem("bg");
+  const myImageArray = JSON.parse(savedImage).myImages;
+  let currentBG = document.getElementById(`bg${bgIndex}`);
   currentBG.classList.remove("visible");
   currentBG.classList.add("invisible");
   bgIndex--;
@@ -933,11 +910,11 @@ function reverseRotateBackgroundImage() {
 }
 
 function saveBackground(imageUrl, city, country, name) {
-  var savedImage = window.localStorage.getItem("bg");
-  var expirationDate = new Date();
+  const savedImage = window.localStorage.getItem("bg");
+  const expirationDate = new Date();
   expirationDate.setHours(expirationDate.getHours() + 8);
-  var myImageArray;
-  var parsedImage;
+  let myImageArray;
+  let parsedImage;
 
   if (savedImage == null) {
     myImageArray = [];
@@ -1000,13 +977,13 @@ slideBackground.addEventListener("dragstart", function (event) {
   console.log("start : dragStartX");
 }, false);
 slideBackground.addEventListener("dragend", function (event) {
-  var dragEndX = event.screenX;
+  const dragEndX = event.screenX;
   console.log("start : dragStartX");
   console.log(dragEndX);
 }, false);
 initApp();
 // EXTERNAL MODULE: ./src/js/clock.js
-var js_clock = __webpack_require__(373);
+var js_clock = __webpack_require__(372);
 
 // EXTERNAL MODULE: ./node_modules/isomorphic-fetch/fetch-npm-browserify.js
 var fetch_npm_browserify = __webpack_require__(130);
@@ -1058,10 +1035,10 @@ function init() {
 
 init();
 // EXTERNAL MODULE: ./src/js/greeting.js
-var greeting = __webpack_require__(375);
+var greeting = __webpack_require__(374);
 
 // EXTERNAL MODULE: ./src/js/todo.js
-var js_todo = __webpack_require__(376);
+var js_todo = __webpack_require__(375);
 
 // CONCATENATED MODULE: ./src/js/app.js
 
