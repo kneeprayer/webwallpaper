@@ -9,6 +9,8 @@
   "private": true,
   "license": "MIT",
   "scripts": {
+    "app": "node localapp.js",
+    "preapp": "yarn build",    
     "start": "webpack-dev-server --mode development --config webpack/webpack.common.js",
     "build": "webpack --mode production --config webpack/webpack.common.js",
     "deploy": "gh-pages -d dist",
@@ -51,6 +53,7 @@
     "webpack-merge": "^4.1.4"
   },
   "dependencies": {
+    "carlo": "^0.9.43",
     "es6-promise": "^4.2.5",
     "eslint": "^5.12.0",
     "ganalytics": "^3.0.0",
