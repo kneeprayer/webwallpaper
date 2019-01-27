@@ -9,18 +9,18 @@ This app is only working based on localapp using localstrage of browser. so your
 2. `yarn install`
 
 ## How to use it
-* Just visit https://kneeprayer.github.io/webwallpaper
-* For using Local App `yarn app`
+* Just use https://kneeprayer.github.io/webwallpaper
+* For using local App `yarn app`
 * For developent mode  `yarn start`  
 * To deploy to github pages  `yarn deploy`    
 * To build  `yarn build`
 
-## IF you want to clear your data, 
+## How to clear Local Storage 
 1. Open Developer Tools (press F12 key on windows and Linux or ⌘ + Option + i on Mac)
 2. Select the «Application» item in the tab.
 3. Select the «Storage» > «Local Storage» in the console’s menu.
 4. Select your site or localhost.
-5. Click "CLear all" icon.
+5. Click "Clear all" icon.
 
 ## License
 This project is licensed under the terms of the MIT license.
