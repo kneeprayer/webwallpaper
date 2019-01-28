@@ -7,7 +7,6 @@ import "../css/weather.css";
 import "../css/welcome.css";
 import "../css/todo.css";
 import "../css/slide.css";
-import "./head.js";
 import "./body.js";
 import "./bg.js";
 import "./clock.js";
