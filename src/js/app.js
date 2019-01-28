@@ -6,7 +6,7 @@ import "../css/clock.css";
 import "../css/weather.css";
 import "../css/welcome.css";
 import "../css/todo.css";
-import "../css/slide.css";
+import "../css/bg.css";
 import "./body.js";
 import "./bg.js";
 import "./clock.js";
