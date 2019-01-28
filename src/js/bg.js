@@ -53,8 +53,8 @@ function loadBackground() {
       removeBackgroundImage();
       getBackground();
     } else if (typeof parsedImage === "undefined" || parsedImage.length < 5) {
-      getBackground();
       sleep(1000);
+      getBackground();
     } else if (
       slideBackground.getElementsByClassName("slideBackground__img").length <= 5
     ) {
