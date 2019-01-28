@@ -99,6 +99,9 @@ function rotateBackgroundImage() {
   if (bgIndex >= myImageArray.length) {
     bgIndex = 0;
   }
+  currentBG = document.getElementById(`bg${bgIndex}`);
+  currentBG.classList.remove("invisible");
+  currentBG.classList.add("visible");
   window.localStorage.setItem("bgIndex", bgIndex.toString());
 }
 
@@ -113,6 +116,9 @@ function reverseRotateBackgroundImage() {
   if (bgIndex < 0) {
     bgIndex = myImageArray.length - 1;
   }
+  currentBG = document.getElementById(`bg${bgIndex}`);
+  currentBG.classList.remove("invisible");
+  currentBG.classList.add("visible");
   window.localStorage.setItem("bgIndex", bgIndex.toString());
 }
 
