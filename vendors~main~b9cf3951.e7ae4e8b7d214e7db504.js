@@ -1,6 +1,6 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[3],{
 
-/***/ 127:
+/***/ 126:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16,7 +16,7 @@ var OAUTH_TOKEN_URL = exports.OAUTH_TOKEN_URL = "https://unsplash.com/oauth/toke
 
 /***/ }),
 
-/***/ 128:
+/***/ 127:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32,13 +32,13 @@ exports.formUrlEncode = formUrlEncode;
 exports.getUrlComponents = getUrlComponents;
 exports.buildFetchOptions = buildFetchOptions;
 
-var _querystring = __webpack_require__(129);
+var _querystring = __webpack_require__(128);
 
-var _formUrlencoded = __webpack_require__(359);
+var _formUrlencoded = __webpack_require__(345);
 
 var _formUrlencoded2 = _interopRequireDefault(_formUrlencoded);
 
-var _urlParse = __webpack_require__(360);
+var _urlParse = __webpack_require__(346);
 
 var _urlParse2 = _interopRequireDefault(_urlParse);
 
@@ -84,19 +84,19 @@ function buildFetchOptions(options) {
 
 /***/ }),
 
-/***/ 129:
+/***/ 128:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-exports.decode = exports.parse = __webpack_require__(357);
-exports.encode = exports.stringify = __webpack_require__(358);
+exports.decode = exports.parse = __webpack_require__(343);
+exports.encode = exports.stringify = __webpack_require__(344);
 
 
 /***/ }),
 
-/***/ 330:
+/***/ 329:
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {/**
@@ -840,7 +840,7 @@ exports.encode = exports.stringify = __webpack_require__(358);
 
 /***/ }),
 
-/***/ 357:
+/***/ 343:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -932,7 +932,7 @@ var isArray = Array.isArray || function (xs) {
 
 /***/ }),
 
-/***/ 358:
+/***/ 344:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1025,14 +1025,14 @@ var objectKeys = Object.keys || function (obj) {
 
 /***/ }),
 
-/***/ 360:
+/***/ 346:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(global) {
 
-var required = __webpack_require__(361)
-  , qs = __webpack_require__(362)
+var required = __webpack_require__(347)
+  , qs = __webpack_require__(348)
   , protocolre = /^([a-z][a-z0-9.+-]*:)?(\/\/)?([\S\s]*)/i
   , slashes = /^[A-Za-z][A-Za-z0-9+-.]*:\/\//;
 
@@ -1446,7 +1446,7 @@ module.exports = URL;
 
 /***/ }),
 
-/***/ 361:
+/***/ 347:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1492,7 +1492,7 @@ module.exports = function required(port, protocol) {
 
 /***/ }),
 
-/***/ 362:
+/***/ 348:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1572,7 +1572,7 @@ exports.parse = querystring;
 
 /***/ }),
 
-/***/ 363:
+/***/ 349:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1583,11 +1583,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = auth;
 
-var _querystring = __webpack_require__(129);
+var _querystring = __webpack_require__(128);
 
 var _querystring2 = _interopRequireDefault(_querystring);
 
-var _constants = __webpack_require__(127);
+var _constants = __webpack_require__(126);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1635,7 +1635,7 @@ function auth() {
 
 /***/ }),
 
-/***/ 364:
+/***/ 350:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1697,7 +1697,7 @@ function currentUser() {
 
 /***/ }),
 
-/***/ 365:
+/***/ 351:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1800,7 +1800,7 @@ function users() {
 
 /***/ }),
 
-/***/ 366:
+/***/ 352:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1811,9 +1811,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = photos;
 
-var _utils = __webpack_require__(128);
+var _utils = __webpack_require__(127);
 
-var _lodash = __webpack_require__(367);
+var _lodash = __webpack_require__(353);
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
@@ -2000,7 +2000,7 @@ function photos() {
 
 /***/ }),
 
-/***/ 368:
+/***/ 354:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2051,7 +2051,7 @@ function categories() {
 
 /***/ }),
 
-/***/ 369:
+/***/ 355:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2217,7 +2217,7 @@ function createUpdateCollection(id, title, description, isPrivate) {
 
 /***/ }),
 
-/***/ 370:
+/***/ 356:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2259,7 +2259,7 @@ function searcher(url) {
 
 /***/ }),
 
-/***/ 371:
+/***/ 357:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2286,7 +2286,7 @@ function stats() {
 
 /***/ }),
 
-/***/ 373:
+/***/ 359:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2857,39 +2857,39 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 exports.toJson = toJson;
 
-var _constants = __webpack_require__(127);
+var _constants = __webpack_require__(126);
 
-var _utils = __webpack_require__(128);
+var _utils = __webpack_require__(127);
 
-var _auth = __webpack_require__(363);
+var _auth = __webpack_require__(349);
 
 var _auth2 = _interopRequireDefault(_auth);
 
-var _currentUser = __webpack_require__(364);
+var _currentUser = __webpack_require__(350);
 
 var _currentUser2 = _interopRequireDefault(_currentUser);
 
-var _users = __webpack_require__(365);
+var _users = __webpack_require__(351);
 
 var _users2 = _interopRequireDefault(_users);
 
-var _photos = __webpack_require__(366);
+var _photos = __webpack_require__(352);
 
 var _photos2 = _interopRequireDefault(_photos);
 
-var _categories = __webpack_require__(368);
+var _categories = __webpack_require__(354);
 
 var _categories2 = _interopRequireDefault(_categories);
 
-var _collections = __webpack_require__(369);
+var _collections = __webpack_require__(355);
 
 var _collections2 = _interopRequireDefault(_collections);
 
-var _search = __webpack_require__(370);
+var _search = __webpack_require__(356);
 
 var _search2 = _interopRequireDefault(_search);
 
-var _stats = __webpack_require__(371);
+var _stats = __webpack_require__(357);
 
 var _stats2 = _interopRequireDefault(_stats);
 
