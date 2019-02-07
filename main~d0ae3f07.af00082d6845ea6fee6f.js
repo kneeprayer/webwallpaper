@@ -654,7 +654,17 @@ const spinner = document.querySelector(".spinner"); // eslint-disable-next-line 
 
 let dragStartX = null;
 let bg_unsplash = null;
+let unsplashApiErrorCount = 0;
 window.localStorage.setItem("bgIndex", "0");
+
+function unsplashApiOverMaximumCallLimits() {
+  saveBackground("https://images.unsplash.com/photo-1467654513564-17c5e87d8f20?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjQwOTIzfQ", "Patras", "Greece", "Patras");
+  saveBackground("https://images.unsplash.com/photo-1543491434-cf5cd3f7da64?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjQwOTIzfQ", "Tokyo", "Japan", "The city of houses");
+  saveBackground("https://images.unsplash.com/photo-1494906084264-f315becbf75e?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjQwOTIzfQ", "Fruita", "United States", "Colorado National Monument");
+  saveBackground("https://images.unsplash.com/photo-1547078353-be807bdb3f8e?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjQwOTIzfQ", "Toronto", "Canada", "7473 Eglinton Ave E, Toronto, ON M3C, Canada");
+  saveBackground("https://images.unsplash.com/photo-1542029432708-e3f7968a4620?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjQwOTIzfQ", "Bournemouth", "United Kingdom", "Boscombe Promenade, Bournemouth BH5 1BN, UK");
+  unsplashApiErrorCount = 0;
+}
 
 function sleep(waitMsec) {
   const startMsec = new Date();
@@ -696,6 +706,9 @@ function loadBackground() {
     if (typeof parsedImage !== "undefined" && today > new Date(parsedImage[0].expiresOn)) {
       removeBackgroundImage();
       getBackground();
+    } else if (unsplashApiErrorCount >= 5) {
+      unsplashApiOverMaximumCallLimits();
+      loadBackground();
     } else if (typeof parsedImage === "undefined" || parsedImage.length < 5) {
       sleep(1000);
       getBackground();
@@ -716,9 +729,8 @@ function loadBackground() {
         slideBackground.appendChild(img);
         ++i;
       });
+      locationContainer.innerHTML = `${parsedImage[0].name}, ${parsedImage[0].city}, ${parsedImage[0].country}`;
     }
-
-    locationContainer.innerHTML = `${parsedImage[0].name}, ${parsedImage[0].city}, ${parsedImage[0].country}`;
   }
 }
 
@@ -794,7 +806,6 @@ function saveBackground(imageUrl, city, country, name) {
     myImages: myImageArray
   };
   window.localStorage.setItem("bg", JSON.stringify(parsedImage));
-  loadBackground();
 }
 
 function getBackground() {
@@ -811,10 +822,12 @@ function getBackground() {
       const country = location.country;
       const name = location.name;
       saveBackground(fullUrl, city, country, name);
+      loadBackground();
     } else {
       getBackground();
     }
   }).catch(error => {
+    unsplashApiErrorCount++;
     console.log(error);
   });
 }
