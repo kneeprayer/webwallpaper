@@ -7,8 +7,7 @@ const spinner = document.querySelector(".spinner");
 // eslint-disable-next-line no-unused-vars
 let dragStartX = null;
 let unsplash = null;
-// let unsplashApiErrorCount = 0;
-let unsplashApiErrorCount = 5;
+let unsplashApiErrorCount = 0;
 window.localStorage.setItem("bgIndex", "0");
 
 function unsplashApiOverMaximumCallLimits() {
